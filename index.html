@@ -2,155 +2,148 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Apex TV — Apps & Downloads</title>
-
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/png" href="https://i.imgur.com/PfG9TQF.png">
 
 <style>
-:root{
-  --bg1:#091121;
-  --bg2:#0d1832;
-  --panel:#102040;
-  --border:#1f2c4f;
-  --text:#e8f0ff;
-  --muted:#9fb1d7;
-  --brand:#4ea1ff;
-}
-
-*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Roboto,Arial}
-
 body{
-  background:
-    radial-gradient(circle at top, rgba(78,161,255,.08), transparent 50%),
-    linear-gradient(180deg,var(--bg1),var(--bg2));
-  color:var(--text);
+  margin:0;
+  font-family:Segoe UI,system-ui;
+  background:radial-gradient(ellipse at top,#0d1c33,#071021 55%,#040812);
+  color:#e5eeff;
 }
 
-.wrapper{max-width:1050px;margin:0 auto 90px;padding:22px}
-
-/* Header */
-.logo{width:140px;margin:22px auto 10px;display:block}
-h1{text-align:center;font-size:32px}
-.tagline{text-align:center;margin:6px 0 10px;color:var(--muted)}
-
-.btn-discord{
-  background:#5865F2;border:none;color:white;padding:9px 16px;
-  border-radius:10px;display:flex;align-items:center;gap:7px;
-  margin:8px auto 12px;cursor:pointer;font-size:14px
+.container{ 
+  max-width:1100px; 
+  margin:0 auto; 
+  padding:30px 15px; 
 }
 
-.nav{
-  margin-top:12px;
+h1{text-align:center;font-size:42px;margin:14px 0;}
+.subtitle{text-align:center;color:#bcd8ff;margin-bottom:20px}
+
+.logo{display:block;margin:6px auto 10px;height:64px}
+
+.top-actions{
   display:flex;
   justify-content:center;
-  gap:18px;
+  align-items:center;
+  gap:10px;
   flex-wrap:wrap;
 }
-.nav a{
-  color:#bcd8ff;
+
+.btn{
+  padding:8px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  border:1px solid #355adf;
+  background:#2a4dff;
+  color:white;
+  box-shadow:0 3px 10px #0006;
+  transition:.25s;
   text-decoration:none;
-  font-size:14px;
-  padding:6px 10px;
-  border-radius:8px;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.08);
 }
-.nav a:hover{background:rgba(255,255,255,.15)}
+.btn:hover{transform:translateY(-2px)}
 
-.section{margin-top:40px}
-.section-title{
-  font-size:20px;
-  font-weight:700;
-  margin-bottom:16px;
-  display:flex;
-  align-items:center;
-  gap:8px;
+.status{
+  background:#0f2d27;
+  border:1px solid #1f5a4c;
+  padding:6px 14px;
+  border-radius:10px;
+  color:#6ff7c5;
 }
 
-.panel{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:16px 18px;
-  line-height:1.55;
+.ip{ text-align:center;margin-top:8px;color:#bcd8ff }
+
+.shortcuts{
+  text-align:center;margin:16px 0 22px;
 }
-
-/* grid cards */
-.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-
-.box{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:15px;
-  text-align:center;
-  flex:1 1 calc(33% - 10px);
-  max-width:340px;
-  transition:.18s ease;
-}
-.box:hover{transform:translateY(-4px);box-shadow:0 18px 30px rgba(0,0,0,.35)}
-.box h3{margin-bottom:4px}
-.meta{font-size:12px;color:var(--muted);margin-top:6px}
-
-.btn{margin-top:6px;background:var(--brand);border:none;color:white;
-  padding:9px 15px;border-radius:10px;cursor:pointer;font-size:14px}
-.copy-btn{margin-top:6px;background:#1c2f53;color:#cfe0ff;border:1px solid #233d6d;
-  padding:5px 10px;border-radius:8px;font-size:12px;cursor:pointer}
-
-.grid .box:only-child{flex:1 1 100%;max-width:none}
-.grid .box:nth-child(1):nth-last-child(2),
-.grid .box:nth-child(2):nth-last-child(1){
-  flex:1 1 calc(50% - 10px);max-width:none
-}
-
-/* reveal animation */
-.hidden{opacity:0;transform:translateY(18px);transition:.32s ease}
-.show{opacity:1;transform:none}
-
-/* FAQ formatting */
-details{
-  margin-top:12px;
-  background:#0f2346;
-  border:1px solid #1f335b;
+.shortcuts a{
+  display:inline-block;
+  background:#0e213f;
+  color:#dfe9ff;
+  padding:6px 14px;
   border-radius:12px;
-  padding:12px 14px;
+  margin:4px;
+  text-decoration:none;
+  border:1px solid #1e3d72;
 }
-summary{cursor:pointer;font-weight:600;user-select:none;caret-color:transparent}
-details p{margin-top:8px;line-height:1.6}
-details code{background:#0d1e3f;padding:2px 6px;border-radius:6px}
+.shortcuts a:hover{background:#153569}
 
-/* Footer */
-footer{text-align:center;margin-top:44px;color:#8294c3;font-size:13px}
+.section{margin-top:32px}
+.section-title{
+  font-size:22px;
+  margin-bottom:10px;
+}
 
-/* Stop browser text cursor appearing */
-button, summary, nav a {caret-color:transparent;outline:none}
-summary:focus, nav a:focus, button:focus {outline:none}
+.grid{display:flex;flex-wrap:wrap;gap:16px}
+.card{
+  flex:1;
+  min-width:260px;
+  background:#0b1c33;
+  border:1px solid #18355e;
+  padding:14px;
+  border-radius:18px;
+  transition:.25s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px #0005}
+
+.card button{
+  padding:10px 16px;
+  border:0;
+  border-radius:10px;
+  background:#2a4dff;
+  color:white;
+  cursor:pointer;
+  box-shadow:0 4px 12px #0007;
+}
+.card small{opacity:.7}
+
+.tools{
+  margin-top:20px;
+}
+.tools .panel{
+  background:#0b1c33;
+  border:1px solid #18355e;
+  padding:12px;
+  border-radius:16px;
+}
+
+details{
+  background:#0b1c33;
+  border:1px solid #18355e;
+  border-radius:14px;
+  padding:10px 12px;
+  margin-bottom:10px;
+}
+details summary{
+  cursor:pointer;
+  font-weight:600;
+}
+
+footer{text-align:center;margin:40px 0;color:#9fb6db}
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="container">
 
-<img src="logo.png" class="logo" alt="Apex TV">
+<img class="logo" src="https://i.imgur.com/9g7TXdT.png">
 
 <h1>Apex TV — Apps & Downloads</h1>
-<p class="tagline">Everything you need — apps, tools and setup links — in one place.</p>
+<div class="subtitle">Everything you need — apps, tools and setup links — in one place.</div>
 
-<a href="https://discord.gg/YSJYCXQPAa" target="_blank">
-  <button class="btn-discord">💬 Join Discord</button>
-</a>
-
-<!-- uptime badge -->
-<div style="text-align:center;margin-top:4px;">
-  <span style="background:#0f2d27;border:1px solid #1f5a4c;padding:5px 10px;border-radius:10px;color:#6ff7c5">
-    🟢 Service Status: <b>Online</b>
-  </span>
+<div class="top-actions">
+  <a class="btn" href="#" target="_blank">💬 Join Discord</a>
+  <span class="status">🟢 Service Status: <b>Online</b></span>
 </div>
 
-<!-- quick nav -->
-<nav class="nav">
+<div class="ip">Your IP: <span id="userip">Detecting…</span></div>
+
+<!-- QUICK NAV -->
+<div class="shortcuts">
   <a href="#androidtv">Android TV</a>
   <a href="#mobile">Mobile</a>
   <a href="#ios">iOS</a>
@@ -158,194 +151,146 @@ summary:focus, nav a:focus, button:focus {outline:none}
   <a href="#vpn">VPN</a>
   <a href="#vault">Vault</a>
   <a href="#faq">FAQ</a>
-</nav>
+</div>
+
+<!-- FIXTURE HUB -->
+<div class="tools">
+  <div class="panel">
+    ⭐ <b>Useful:</b> Live fixtures & schedules — 
+    <a href="https://fixturehub.cc" target="_blank">https://fixturehub.cc</a>
+  </div>
+</div>
 
 <!-- BEFORE YOU START -->
-<div class="section">
-  <div class="section-title">⚙ Before you start</div>
-
-  <div class="panel">
-    <b>Good news:</b> you only ever need to install <b>one</b> app.  
-    All apps show the same content — just choose whichever layout you like.<br><br>
-
-    <b>Firestick / Android TV:</b> you must install <b>Downloader</b> first.<br>
-    Setup video: <a href="https://youtu.be/MCy4vFD_FQk" target="_blank">https://youtu.be/MCy4vFD_FQk</a><br><br>
-
-    💡 <b>One-click install:</b> open Downloader → enter the code shown next to each app → install.  
-    No typing long links, no file managers.
+<div class="section" id="start">
+  <div class="section-title">🔧 Before You Start</div>
+  <div class="card">
+    You will need the <b>Downloader app</b> on Firestick/Chromecast.<br><br>
+    Setup video: <a href="https://youtu.be/MCy4vFD_FQk" target="_blank">Watch here</a><br><br>
+    <i>All apps show the same content — choose whichever you prefer.</i>
   </div>
 </div>
 
 <!-- ANDROID TV -->
-<div id="androidtv" class="section">
-  <div class="section-title">📺 Android TV & Firestick</div>
-  <div class="grid">
+<div class="section" id="androidtv">
+<div class="section-title">📺 Android TV & Firestick</div>
+<div class="grid">
 
-    <div class="box hidden">
-      <h3>Apex TV (XC)</h3>
-      <button class="btn" onclick="location='https://apex-tv.xyz/xc'">Download here</button>
-      <div class="meta">Downloader: 1134921</div>
-      <button class="copy-btn" onclick="copy('1134921')">Copy code</button>
-    </div>
+<div class="card">
+  <b>Apex TV (XC)</b><br><br>
+  <button onclick="location.href='https://apex-tv.xyz/xc'">Download Here</button><br><br>
+  <small>Downloader code: 1134921</small>
+</div>
 
-    <div class="box hidden">
-      <h3>TiviMate Premium</h3>
-      <button class="btn" onclick="location='https://apex-tv.xyz/tivi'">Download here</button>
-      <div class="meta">Downloader: 8175140</div>
-      <button class="copy-btn" onclick="copy('8175140')">Copy code</button>
-    </div>
+<div class="card">
+  <b>TiviMate Premium</b><br><br>
+  <button onclick="location.href='https://apex-tv.xyz/tivi'">Download Here</button><br><br>
+  <small>Downloader code: 8175140</small>
+</div>
 
-  </div>
+</div>
 </div>
 
 <!-- MOBILE -->
-<div id="mobile" class="section">
-  <div class="section-title">🤖 Android Mobile</div>
+<div class="section" id="mobile">
+<div class="section-title">📱 Android Mobile</div>
+<div class="grid">
 
-  <div class="grid">
+<div class="card">
+  <b>Apex Mobile</b><br><br>
+  <button onclick="location.href='https://apex-tv.xyz/mobile'">Download Here</button>
+</div>
 
-    <div class="box hidden">
-      <h3>Apex Mobile</h3>
-      <button class="btn" onclick="location='https://apex-tv.xyz/mobile'">Download here</button>
-    </div>
+<div class="card">
+  <b>Backup App</b><br><br>
+  <button onclick="location.href='https://apex-tv.xyz/mobilebackup'">Download Here</button>
+</div>
 
-    <div class="box hidden">
-      <h3>Backup App</h3>
-      <button class="btn" onclick="location='https://apex-tv.xyz/mobilebackup'">Download here</button>
-    </div>
-
-  </div>
+</div>
 </div>
 
 <!-- iOS -->
-<div id="ios" class="section">
-  <div class="section-title">🍎 iOS</div>
+<div class="section" id="ios">
+<div class="section-title">🍎 iOS</div>
 
-  <div class="grid">
+<div class="card">
+  <b>iOS Player</b><br><br>
+  <button onclick="#">Download Here</button><br><br>
+  <small>Playlist Host URL: 5555122</small>
+</div>
 
-    <div class="box hidden">
-      <h3>iOS Player</h3>
-      <button class="btn">Download here</button>
-      <div class="meta">Playlist Host URL: 5555122</div>
-      <button class="copy-btn" onclick="copy('5555122')">Copy code</button>
-    </div>
-
-  </div>
 </div>
 
 <!-- WINDOWS -->
-<div id="windows" class="section">
-  <div class="section-title">🖥 Windows</div>
+<div class="section" id="windows">
+<div class="section-title">🖥 Windows</div>
 
-  <div class="grid">
+<div class="card">
+  <b>Windows App</b><br><br>
+  <button onclick="#">Download Here</button>
+</div>
 
-    <div class="box hidden">
-      <h3>Windows App</h3>
-      <button class="btn">Download here</button>
-    </div>
-
-  </div>
 </div>
 
 <!-- VPN -->
-<div id="vpn" class="section">
-  <div class="section-title">🛡 VPN</div>
+<div class="section" id="vpn">
+<div class="section-title">🔒 VPN</div>
 
-  <div class="grid">
+<div class="card">
+  <b>Recommended VPN</b><br><br>
+  <button onclick="#">Download Here</button><br><br>
+  <small>Downloader code: 394721</small>
+</div>
 
-    <div class="box hidden">
-      <h3>Apex VPN</h3>
-      <button class="btn" onclick="location='https://apk.st/CAYFM'">Download here</button>
-      <div class="meta">Downloader: 999999</div>
-      <button class="copy-btn" onclick="copy('999999')">Copy code</button>
-    </div>
-
-  </div>
 </div>
 
 <!-- VAULT -->
-<div id="vault" class="section">
-  <div class="section-title">🔐 Apex Vault</div>
+<div class="section" id="vault">
+<div class="section-title">📦 Apex Vault</div>
 
-  <div class="grid">
+<div class="card">
+  <b>Vault App</b><br><br>
+  <button onclick="#">Download Here</button>
+</div>
 
-    <div class="box hidden">
-      <h3>Vault App</h3>
-      <button class="btn" onclick="location='https://apex-tv.xyz/vault'">Download here</button>
-    </div>
-
-  </div>
 </div>
 
 <!-- FAQ -->
-<div id="faq" class="section">
-  <div class="section-title">❓ FAQ / Troubleshooting</div>
+<div class="section" id="faq">
+<div class="section-title">❓ FAQ & Help</div>
 
-  <details>
-    <summary>🔐 Login / Access Problems</summary>
-    <p>
-      • Username must be <b>lower-case</b><br>
-      • Turn off VPN (first login fails with VPN)<br>
-      • Server must be: <code>https://apextv.cc</code><br>
-      • If expired — renew in Discord<br><br>
-      💬 Still stuck? Open a support ticket.
-    </p>
-  </details>
+<details open>
+  <summary>🔐 Login / Access Problems</summary>
+  Double check username is lowercase, disable VPN, ensure https:// is used.
+</details>
 
-  <details>
-    <summary>🎬 Playback Issues</summary>
-    <p>
-      • Clear app cache + restart router<br>
-      • Change player (EXO ↔ VLC)<br>
-      • Switch to <b>HLS</b> + increase buffer<br>
-      • Disable VPN or try another location<br>
-      • Try another channel/region feed<br><br>
-      If problems only happen on match days — use alternate streams.
-    </p>
-  </details>
+<details>
+  <summary>🎬 Playback Troubleshooting</summary>
+  Clear cache, reboot router, change stream type to HLS, try EXO/VLC, test another network.
+</details>
 
-  <details>
-    <summary>⚙ One-Click Install (explained)</summary>
-    <p>
-      1️⃣ Open <b>Downloader</b><br>
-      2️⃣ Type the short code shown next to the app<br>
-      3️⃣ Press install → Done → Delete file<br><br>
-      The app appears under <b>Apps & Channels</b>.
-    </p>
-  </details>
+<details>
+  <summary>⚙ Firestick Setup</summary>
+  Enable developer mode → install Downloader → paste link → install app → open.
+</details>
 
-  <details>
-    <summary>📅 Renewals</summary>
-    <p>
-      Your expiry shows inside the app.  
-      Renew in Discord → refresh your playlist afterwards.
-    </p>
-  </details>
-
-  <details>
-    <summary>⚽ Football Streams</summary>
-    <p>
-      Matches usually have multiple streams — check EPL, Sky/TNT, or backups.  
-      Avoid Wi-Fi extenders, and restart router before big games.
-    </p>
-  </details>
+<details>
+  <summary>📅 Renewals / Expiry</summary>
+  Check expiry in XC app homepage. Renew instantly via Discord renew channel.
+</details>
 
 </div>
 
-<footer>ApexTV | 2025</footer>
+<footer>© ApexTV | 2025</footer>
 
 </div>
 
 <script>
-function copy(txt){navigator.clipboard.writeText(txt);alert("Copied: "+txt)}
-
-const obs=new IntersectionObserver(entries=>{
- entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")})
-})
-document.querySelectorAll(".box").forEach(b=>{
- b.classList.add("hidden")
- obs.observe(b)
-})
+// IP DISPLAY
+fetch("https://api.ipify.org?format=json")
+.then(r=>r.json())
+.then(d=>document.getElementById("userip").innerText=d.ip)
+.catch(()=>document.getElementById("userip").innerText="Unavailable");
 </script>
 
 </body>
