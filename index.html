@@ -34,6 +34,15 @@ header img{
 h1{ font-size:42px; margin:10px 0; }
 p.subtitle{ color:#aab8d8; }
 
+/* header buttons line */
+.actions{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
 .button{
   background:#4267ff;
   color:white;
@@ -47,20 +56,20 @@ p.subtitle{ color:#aab8d8; }
   font-size:15px;
 }
 .status{
-  margin-left:10px;
   background:#0d5a2b;
 }
 
-/* IP badge */
+/* IP badge — always its OWN LINE */
 .badge{
   background:#0a1d38;
   padding:12px;
   border-radius:12px;
-  display:inline-block;
-  margin:15px auto 5px;
+  margin:16px auto 5px;
+  display:block;          /* forces new line */
+  max-width:220px;
+  text-align:center;
 }
 
-/* navigation */
 nav{ margin-top:10px; text-align:center; }
 nav button{
   background:#0b1f3f;
@@ -77,7 +86,6 @@ nav button:hover{ background:#123a73; }
   margin-top:25px;
 }
 
-/* section boxes */
 .box{
   background:#0a1e3a;
   border:1px solid #12345f;
@@ -86,7 +94,6 @@ nav button:hover{ background:#123a73; }
   margin-top:10px;
 }
 
-/* grid + cards (slimmed) */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -101,13 +108,8 @@ nav button:hover{ background:#123a73; }
   text-align:center;
 }
 
-.card h3{
-  margin:6px 0 4px;
-}
-
-.card p{
-  margin:6px 0;
-}
+.card h3{ margin:6px 0 4px; }
+.card p{ margin:6px 0; }
 
 .card button{
   margin-top:8px;
@@ -117,14 +119,12 @@ nav button:hover{ background:#123a73; }
   cursor:pointer;
 }
 
-/* buttons */
 .blue{ background:#375dff; color:white; }
 
 .copy{ margin-top:6px; background:#0d203e; color:#a8c5ff; }
 .copy.small{ padding:6px 10px; font-size:13px; border-radius:7px; }
 .copy.copied{ background:#1c7c10; color:white; }
 
-/* FAQ */
 .faq-item{ margin:10px 0; }
 .faq-item summary{
   background:#0b2349;
@@ -169,8 +169,10 @@ window.onload=()=>{
   <h1>Apex TV — Apps & Downloads</h1>
   <p class="subtitle">Everything you need — apps, tools and setup links — in one place.</p>
 
-  <button class="button">Join Discord</button>
-  <button class="button status">Service Status: Online</button>
+  <div class="actions">
+    <button class="button">Join Discord</button>
+    <button class="button status">Service Status: Online</button>
+  </div>
 
   <div class="badge">
     <div style="font-size:14px; opacity:.9;">Your IP</div>
