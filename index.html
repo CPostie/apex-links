@@ -51,17 +51,16 @@ p.subtitle{ color:#aab8d8; }
   background:#0d5a2b;
 }
 
+/* IP badge */
 .badge{
   background:#0a1d38;
-  padding:14px;
+  padding:12px;
   border-radius:12px;
-  display:inline-flex;
-  gap:10px;
+  display:inline-block;
   margin:15px auto 5px;
-  width:max-content;
-  align-items:center;
 }
 
+/* navigation */
 nav{ margin-top:10px; text-align:center; }
 nav button{
   background:#0b1f3f;
@@ -78,26 +77,36 @@ nav button:hover{ background:#123a73; }
   margin-top:25px;
 }
 
+/* section boxes */
 .box{
   background:#0a1e3a;
   border:1px solid #12345f;
   border-radius:16px;
-  padding:16px;   /* slimmed */
+  padding:12px;
   margin-top:10px;
 }
 
+/* grid + cards (slimmed) */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:14px;       /* slightly tighter */
+  gap:10px;
 }
 
 .card{
   background:#06142a;
   border:1px solid #12345f;
   border-radius:16px;
-  padding:14px;   /* slimmed */
+  padding:10px;
   text-align:center;
+}
+
+.card h3{
+  margin:6px 0 4px;
+}
+
+.card p{
+  margin:6px 0;
 }
 
 .card button{
@@ -107,14 +116,16 @@ nav button:hover{ background:#123a73; }
   border:none;
   cursor:pointer;
 }
-.blue{ background:#375dff; color:white; }
-.copy{ margin-top:6px; background:#0d203e; color:#a8c5ff; }
 
+/* buttons */
+.blue{ background:#375dff; color:white; }
+
+.copy{ margin-top:6px; background:#0d203e; color:#a8c5ff; }
+.copy.small{ padding:6px 10px; font-size:13px; border-radius:7px; }
 .copy.copied{ background:#1c7c10; color:white; }
 
-.faq-item{
-  margin:10px 0;
-}
+/* FAQ */
+.faq-item{ margin:10px 0; }
 .faq-item summary{
   background:#0b2349;
   padding:12px;
@@ -122,6 +133,7 @@ nav button:hover{ background:#123a73; }
   cursor:pointer;
   font-size:15px;
 }
+
 footer{ text-align:center; padding:18px; color:#8ca2c8; }
 </style>
 
@@ -161,8 +173,9 @@ window.onload=()=>{
   <button class="button status">Service Status: Online</button>
 
   <div class="badge">
-    Your IP: <span id="iptext">…</span>
-    <button class="copy" onclick="copyIP(this)">Copy</button>
+    <div style="font-size:14px; opacity:.9;">Your IP</div>
+    <div id="iptext" style="font-size:18px; font-weight:600;">…</div>
+    <button class="copy small" onclick="copyIP(this)">Copy</button>
   </div>
 </header>
 
