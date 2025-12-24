@@ -6,87 +6,123 @@
 <title>Apex TV — Apps & Downloads</title>
 
 <style>
-  :root {
-    --bg:#0b1220;
-    --card:#101a2d;
-    --accent:#4ea1ff;
-    --text:#e8edf5;
-    --muted:#a6b1c5;
-  }
+:root{
+  --bg:#0a1120;
+  --card:#101a2d;
+  --accent:#4ea1ff;
+  --text:#e8edf5;
+  --muted:#a6b1c5;
+  --border:#1f2b44;
+}
 
-  * { box-sizing:border-box; }
+*{box-sizing:border-box;}
 
-  body{
-    margin:0;
-    font-family:system-ui,-apple-system,Segoe UI,Arial;
-    background:var(--bg);
-    color:var(--text);
-  }
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Arial;
+  background:var(--bg);
+  color:var(--text);
+}
 
-  header{
-    text-align:center;
-    padding:28px 14px 10px;
-  }
+header{
+  text-align:center;
+  padding:28px 14px 10px;
+}
 
-  .logo{
-    width:140px;
-    height:auto;
-    margin-bottom:8px;
-  }
+.logo{
+  width:150px;
+  margin-bottom:10px;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+}
 
-  h1{
-    margin:4px 0 6px;
-    font-size:28px;
-  }
+h1{margin:4px 0 6px;font-size:30px;}
+.tagline{color:var(--muted);font-size:14px;margin-bottom:18px;}
 
-  .tagline{
-    color:var(--muted);
-    font-size:14px;
-    margin-bottom:18px;
-  }
+.discord-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 12px;
+  border-radius:10px;
+  text-decoration:none;
+  background:#5865F2;
+  color:#fff;
+  font-size:14px;
+  margin-top:4px;
+}
 
-  .container{
-    max-width:900px;
-    margin:0 auto 30px;
-    padding:0 14px;
-  }
+.container{
+  max-width:960px;
+  margin:6px auto 26px;
+  padding:0 14px;
+}
 
-  h2{
-    margin-top:26px;
-    margin-bottom:10px;
-    font-size:18px;
-  }
+.section-icon{
+  font-size:18px;
+  margin-right:6px;
+}
 
-  .card{
-    background:var(--card);
-    border:1px solid #1e2a44;
-    border-radius:14px;
-    padding:16px 16px 14px;
-    margin:8px 0 18px;
-  }
+.section-heading{
+  display:flex;
+  align-items:center;
+  margin-top:26px;
+  margin-bottom:10px;
+  font-size:18px;
+}
 
-  .app{
-    margin:6px 0 10px;
-  }
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  margin:10px 0 18px;
+}
 
-  .tag{
-    display:inline-block;
-    background:#1e2a44;
-    padding:3px 8px;
-    border-radius:8px;
-    font-size:12px;
-    color:var(--muted);
-    margin-top:3px;
-  }
+.grid{
+  display:grid;
+  gap:12px;
+}
 
-  a{ color:var(--accent); word-break:break-all; }
+/* responsive auto grid */
+.grid.auto{
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+}
 
-  footer{
-    text-align:center;
-    padding:26px 0 30px;
-    color:var(--muted);
-    font-size:12px;
-  }
+.app-card{
+  background:#0f1930;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px 12px 11px;
+}
+
+.app-title{
+  font-weight:700;
+  margin-bottom:2px;
+}
+
+.small{color:var(--muted);font-size:12px;}
+
+.copy-btn{
+  margin-top:5px;
+  background:#1e2a44;
+  color:var(--text);
+  border:0;
+  border-radius:9px;
+  padding:5px 8px;
+  font-size:11px;
+  cursor:pointer;
+}
+
+.copy-btn:hover{background:#263457;}
+
+footer{
+  text-align:center;
+  padding:24px 0 30px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+a{color:var(--accent);word-break:break-all;}
 </style>
 </head>
 
@@ -95,80 +131,127 @@
 <header>
   <img src="/logo.png" class="logo" alt="Apex TV logo">
   <h1>Apex TV — Apps & Downloads</h1>
-  <div class="tagline">Your one-stop place for setup links and tools.</div>
+  <div class="tagline">Everything you need — apps, tools and setup links — in one place.</div>
+
+  <a class="discord-btn" href="/join">
+    👥 Join Discord
+  </a>
 </header>
 
 <div class="container">
 
-  <h2>Before you start</h2>
+  <!-- BEFORE YOU START -->
+  <div class="section-heading"><span class="section-icon">⚙️</span>Before you start</div>
   <div class="card">
-    You will need the <strong>Downloader app</strong> prior to using any links on a Firestick/Chromecast.<br><br>
-    Setup guide: <a href="https://youtu.be/MCy4vFD_FQk">https://youtu.be/MCy4vFD_FQk</a><br><br>
+    You will need the <strong>Downloader app</strong> on Firestick/Chromecast.<br><br>
+    Setup video: <a href="https://youtu.be/MCy4vFD_FQk">https://youtu.be/MCy4vFD_FQk</a><br><br>
     <em>All apps show the same content — choose whichever you prefer.</em>
   </div>
 
-  <h2>Android TV & Firestick</h2>
-  <div class="card">
-    <div class="app">
-      <strong>Apex TV (XC)</strong><br>
+  <!-- ANDROID TV -->
+  <div class="section-heading"><span class="section-icon">📺</span>Android TV & Firestick</div>
+  <div class="grid auto">
+    <div class="app-card">
+      <div class="app-title">Apex TV (XC)</div>
       <a href="https://apex-tv.xyz/xc">https://apex-tv.xyz/xc</a><br>
-      <span class="tag">Downloader: 1134921</span>
+      <span class="small">Downloader: 1134921</span><br>
+      <button class="copy-btn" onclick="copy('1134921')">Copy code</button>
+      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/xc')">Copy link</button>
     </div>
-    <div class="app">
-      <strong>TiviMate Premium</strong><br>
+
+    <div class="app-card">
+      <div class="app-title">TiviMate Premium</div>
       <a href="https://apex-tv.xyz/tivi">https://apex-tv.xyz/tivi</a><br>
-      <span class="tag">Downloader: 8175140</span>
+      <span class="small">Downloader: 8175140</span><br>
+      <button class="copy-btn" onclick="copy('8175140')">Copy code</button>
+      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/tivi')">Copy link</button>
     </div>
   </div>
 
-  <h2>Android Mobile</h2>
-  <div class="card">
-    <strong>Apex Mobile:</strong> <a href="https://apex-tv.xyz/mobile">https://apex-tv.xyz/mobile</a><br>
-    <strong>Backup:</strong> <a href="https://apex-tv.xyz/mobilebackup">https://apex-tv.xyz/mobilebackup</a>
+  <!-- ANDROID MOBILE -->
+  <div class="section-heading"><span class="section-icon">🤖</span>Android Mobile</div>
+  <div class="grid auto">
+    <div class="app-card">
+      <div class="app-title">Apex Mobile</div>
+      <a href="https://apex-tv.xyz/mobile">https://apex-tv.xyz/mobile</a><br>
+      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/mobile')">Copy link</button>
+    </div>
+
+    <div class="app-card">
+      <div class="app-title">Backup</div>
+      <a href="https://apex-tv.xyz/mobilebackup">https://apex-tv.xyz/mobilebackup</a><br>
+      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/mobilebackup')">Copy link</button>
+    </div>
   </div>
 
-  <h2>iOS</h2>
-  <div class="card">
-    <a href="https://apex-tv.xyz/iOS">https://apex-tv.xyz/iOS</a><br>
-    <span class="tag">Playlist host URL: 5555122</span>
+  <!-- iOS -->
+  <div class="section-heading"><span class="section-icon">🍎</span>iOS</div>
+  <div class="grid auto">
+    <div class="app-card">
+      <div class="app-title">iOS Player</div>
+      <a href="https://apex-tv.xyz/iOS">https://apex-tv.xyz/iOS</a><br>
+      <span class="small">Playlist Host URL: 5555122</span><br>
+      <button class="copy-btn" onclick="copy('5555122')">Copy code</button>
+      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/iOS')">Copy link</button>
+    </div>
   </div>
 
-  <h2>Windows</h2>
-  <div class="card">
-    <a href="https://apex-tv.xyz/windows">https://apex-tv.xyz/windows</a><br>
-    <small>Server URL can be provided in the support channel.</small>
+  <!-- WINDOWS -->
+  <div class="section-heading"><span class="section-icon">🪟</span>Windows</div>
+  <div class="grid auto">
+    <div class="app-card">
+      <div class="app-title">Windows App</div>
+      <a href="https://apex-tv.xyz/windows">https://apex-tv.xyz/windows</a><br>
+      <span class="small">Server URL provided in support channel</span><br>
+      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/windows')">Copy link</button>
+    </div>
   </div>
 
-  <h2>Web Player</h2>
+  <!-- WEB PLAYER -->
+  <div class="section-heading"><span class="section-icon">🪩</span>Web Player</div>
   <div class="card">
     Details can be provided in the support channel.
   </div>
 
-  <h2>Ping Test (only if requested)</h2>
-  <div class="card">
-    <a href="https://apex-tv.xyz/ping">https://apex-tv.xyz/ping</a><br>
-    <span class="tag">Downloader: 6837828</span>
+  <!-- PING -->
+  <div class="section-heading"><span class="section-icon">🔍</span>Ping test</div>
+  <div class="grid auto">
+    <div class="app-card">
+      <div class="app-title">Ping Tool</div>
+      <a href="https://apex-tv.xyz/ping">https://apex-tv.xyz/ping</a><br>
+      <span class="small">Admin use only</span><br>
+      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/ping')">Copy link</button>
+    </div>
   </div>
 
-  <h2>Apex Vault 🔒</h2>
-  <div class="card">
-    Enhanced addon VOD service (Android/Firestick only).<br><br>
-    Download: <a href="https://apex-tv.xyz/vault">https://apex-tv.xyz/vault</a><br>
-    <span class="tag">Downloader: 1250834</span><br><br>
-    Use your normal Apex login details. Normal household rules apply.
+  <!-- VAULT -->
+  <div class="section-heading"><span class="section-icon">🔒</span>Apex Vault</div>
+  <div class="grid auto">
+    <div class="app-card">
+      <div class="app-title">Vault APK</div>
+      <a href="https://apex-tv.xyz/vault">https://apex-tv.xyz/vault</a><br>
+      <span class="small">Downloader: 1250834</span><br>
+      <button class="copy-btn" onclick="copy('1250834')">Copy code</button>
+      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/vault')">Copy link</button>
+    </div>
   </div>
 
-  <h2>VPN (optional)</h2>
-  <div class="card">
-    Not required for Apex TV (encryption happens server-side).<br>
-    Disable during troubleshooting if asked.<br><br>
-    Download: <a href="https://apex-tv.xyz/vpn">https://apex-tv.xyz/vpn</a><br>
-    <span class="tag">Downloader: 3995390</span>
+  <!-- VPN -->
+  <div class="section-heading"><span class="section-icon">🛡️</span>VPN (optional)</div>
+  <div class="grid auto">
+    <div class="app-card">
+      <div class="app-title">VPN</div>
+      <a href="https://apex-tv.xyz/vpn">https://apex-tv.xyz/vpn</a><br>
+      <span class="small">Disable during troubleshooting</span><br>
+      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/vpn')">Copy link</button>
+      <button class="copy-btn" onclick="copy('3995390')">Copy code</button>
+    </div>
   </div>
 
-  <h2>Support</h2>
+  <!-- SUPPORT -->
+  <div class="section-heading"><span class="section-icon">❓</span>Support</div>
   <div class="card">
-    If you need account details or help, please raise a support ticket in Discord.<br>
+    If you need your details resent or something isn’t working, please open a ticket in Discord.<br>
     Invite link: <a href="/join">https://apex-tv.xyz/join</a>
   </div>
 
@@ -179,6 +262,10 @@
 </footer>
 
 <script>
+function copy(text){
+  navigator.clipboard.writeText(text);
+  alert("Copied: " + text);
+}
 document.getElementById("updated").textContent =
   new Date().toLocaleDateString();
 </script>
