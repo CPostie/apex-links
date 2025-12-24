@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Apex TV — Apps & Downloads</title>
+<title>Apex TV Download Hub</title>
 
 <style>
 :root{
@@ -15,8 +15,6 @@
   --border:#1f2b44;
 }
 
-*{box-sizing:border-box;}
-
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Arial;
@@ -27,239 +25,202 @@ body{
 /* HEADER */
 header{
   text-align:center;
-  padding:28px 14px 6px;
+  padding:28px 14px 10px;
 }
 
-.logo{
-  width:150px;
-  margin-bottom:12px;
-}
+.logo{ width:150px; margin-bottom:12px; }
 
-h1{margin:4px 0 6px;font-size:30px;}
-.tagline{color:var(--muted);font-size:14px;margin-bottom:18px;}
+h1{ margin:4px 0 6px; font-size:30px; }
+.tagline{ color:var(--muted); font-size:14px; margin-bottom:18px; }
 
 .discord-btn{
   display:inline-flex;
   align-items:center;
   gap:6px;
   padding:8px 12px;
-  border-radius:10px;
   background:#5865F2;
   color:#fff;
+  border-radius:10px;
   text-decoration:none;
-  font-size:14px;
 }
 
-/* CONTAINER + SECTIONS */
-.container{
-  max-width:960px;
-  margin:10px auto 24px;
+/* SECTIONS */
+.wrapper{
+  max-width:1000px;
+  margin:0 auto 24px;
   padding:0 14px;
 }
 
-.section-heading{
-  display:flex;
-  align-items:center;
-  gap:6px;
+.section-title{
   margin-top:26px;
-  margin-bottom:6px;      /* tighter, more intentional */
+  margin-bottom:10px;
   font-size:19px;
   font-weight:600;
 }
 
-.card{
+.info-card{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:14px;
-  padding:14px 16px 13px;
-  margin:10px 0 14px;
+  padding:14px 16px;
+  margin-bottom:16px;
 }
 
-/* GRID + APP BOXES */
+/* GRID */
 .grid{
   display:grid;
-  gap:12px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:14px;
+  justify-items:center;
 }
 
-.grid.auto{
-  grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
-}
-
-.app-card{
+.box{
+  width:100%;
+  max-width:380px;
   background:#0f1930;
   border:1px solid var(--border);
   border-radius:12px;
-  padding:12px 14px 10px;
+  padding:12px 14px;
+  text-align:center;
 }
 
-.app-title{
-  font-weight:700;
-  margin-bottom:6px;      /* ADDED spacing below title */
+.box-title{ font-weight:700; margin-bottom:8px; }
+
+.btn-link{
+  display:inline-block;
+  background:var(--accent);
+  color:#001733;
+  padding:6px 10px;
+  border-radius:10px;
+  font-weight:600;
+  text-decoration:none;
 }
 
-.app-link{
-  display:block;
-  margin-bottom:6px;      /* ADDED to separate text + controls */
-}
+.small{ color:var(--muted); font-size:12px; display:block; margin-top:6px; }
 
-.small{color:var(--muted);font-size:12px;}
-
-.copy-row{
-  margin-top:6px;         /* pushes buttons away a bit */
-}
-
-.copy-btn{
+.copy{
+  margin-top:6px;
   background:#1e2a44;
-  color:var(--text);
+  color:#fff;
   border:0;
-  border-radius:9px;
   padding:5px 8px;
+  border-radius:9px;
   font-size:11px;
-  margin-right:4px;
   cursor:pointer;
 }
 
-.copy-btn:hover{background:#263457;}
-
 footer{
   text-align:center;
-  padding:28px 0 34px;
   color:var(--muted);
-  font-size:13px;
-  opacity:.9;
+  padding:28px 0 34px;
 }
-
-a{color:var(--accent);text-decoration:none;}
-a:hover{text-decoration:underline;}
 </style>
 </head>
 
 <body>
 
 <header>
-  <img src="/logo.png" class="logo" alt="Apex TV logo">
+  <img src="/logo.png" class="logo">
   <h1>Apex TV — Apps & Downloads</h1>
-  <div class="tagline">Everything you need — apps, tools and setup links — in one place.</div>
+  <div class="tagline">Your download hub. Everything in one place.</div>
 
   <a class="discord-btn" href="/join">👥 Join Discord</a>
 </header>
 
-<div class="container">
+<div class="wrapper">
 
   <!-- BEFORE YOU START -->
-  <div class="section-heading">⚙️ Before you start</div>
-  <div class="card">
+  <div class="section-title">⚙️ Before you start</div>
+  <div class="info-card">
     You will need the <strong>Downloader app</strong> on Firestick/Chromecast.<br><br>
-    Setup video: <a href="https://youtu.be/MCy4vFD_FQk">https://youtu.be/MCy4vFD_FQk</a><br><br>
+    Setup video: <a href="https://youtu.be/MCy4vFD_FQk">Watch here</a><br><br>
     <em>All apps show the same content — choose whichever you prefer.</em>
   </div>
 
   <!-- ANDROID TV -->
-  <div class="section-heading">📺 Android TV & Firestick</div>
-  <div class="grid auto">
+  <div class="section-title">📺 Android TV & Firestick</div>
+  <div class="grid">
 
-    <div class="app-card">
-      <div class="app-title">Apex TV (XC)</div>
-      <a class="app-link" href="https://apex-tv.xyz/xc">https://apex-tv.xyz/xc</a>
+    <div class="box">
+      <div class="box-title">Apex TV (XC)</div>
+      <a class="btn-link" href="https://apex-tv.xyz/xc">Download here</a>
       <span class="small">Downloader: 1134921</span>
-      <div class="copy-row">
-        <button class="copy-btn" onclick="copy('1134921')">Copy code</button>
-        <button class="copy-btn" onclick="copy('https://apex-tv.xyz/xc')">Copy link</button>
-      </div>
+      <button class="copy" onclick="copy('1134921')">Copy code</button>
     </div>
 
-    <div class="app-card">
-      <div class="app-title">TiviMate Premium</div>
-      <a class="app-link" href="https://apex-tv.xyz/tivi">https://apex-tv.xyz/tivi</a>
+    <div class="box">
+      <div class="box-title">TiviMate Premium</div>
+      <a class="btn-link" href="https://apex-tv.xyz/tivi">Download here</a>
       <span class="small">Downloader: 8175140</span>
-      <div class="copy-row">
-        <button class="copy-btn" onclick="copy('8175140')">Copy code</button>
-        <button class="copy-btn" onclick="copy('https://apex-tv.xyz/tivi')">Copy link</button>
-      </div>
+      <button class="copy" onclick="copy('8175140')">Copy code</button>
     </div>
 
   </div>
 
   <!-- ANDROID MOBILE -->
-  <div class="section-heading">🤖 Android Mobile</div>
-  <div class="grid auto">
+  <div class="section-title">🤖 Android Mobile</div>
+  <div class="grid">
 
-    <div class="app-card">
-      <div class="app-title">Apex Mobile</div>
-      <a class="app-link" href="https://apex-tv.xyz/mobile">https://apex-tv.xyz/mobile</a>
-      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/mobile')">Copy link</button>
+    <div class="box">
+      <div class="box-title">Apex Mobile</div>
+      <a class="btn-link" href="https://apex-tv.xyz/mobile">Download here</a>
     </div>
 
-    <div class="app-card">
-      <div class="app-title">Backup</div>
-      <a class="app-link" href="https://apex-tv.xyz/mobilebackup">https://apex-tv.xyz/mobilebackup</a>
-      <button class="copy-btn" onclick="copy('https://apex-tv.xyz/mobilebackup')">Copy link</button>
+    <div class="box">
+      <div class="box-title">Backup App</div>
+      <a class="btn-link" href="https://apex-tv.xyz/mobilebackup">Download here</a>
     </div>
 
   </div>
 
   <!-- iOS -->
-  <div class="section-heading">🍎 iOS</div>
-  <div class="grid auto">
+  <div class="section-title">🍎 iOS</div>
+  <div class="grid">
 
-    <div class="app-card">
-      <div class="app-title">iOS Player</div>
-      <a class="app-link" href="https://apex-tv.xyz/iOS">https://apex-tv.xyz/iOS</a>
+    <div class="box">
+      <div class="box-title">iOS Player</div>
+      <a class="btn-link" href="https://apex-tv.xyz/iOS">Download here</a>
       <span class="small">Playlist Host URL: 5555122</span>
-      <div class="copy-row">
-        <button class="copy-btn" onclick="copy('5555122')">Copy code</button>
-        <button class="copy-btn" onclick="copy('https://apex-tv.xyz/iOS')">Copy link</button>
-      </div>
+      <button class="copy" onclick="copy('5555122')">Copy code</button>
     </div>
 
   </div>
 
   <!-- WINDOWS -->
-  <div class="section-heading">🪟 Windows</div>
-  <div class="grid auto">
-    <div class="app-card">
-      <div class="app-title">Windows App</div>
-      <a class="app-link" href="https://apex-tv.xyz/windows">https://apex-tv.xyz/windows</a>
-      <span class="small">Server URL available in support</span>
-      <div class="copy-row">
-        <button class="copy-btn" onclick="copy('https://apex-tv.xyz/windows')">Copy link</button>
-      </div>
+  <div class="section-title">🪟 Windows</div>
+  <div class="grid">
+
+    <div class="box">
+      <div class="box-title">Windows App</div>
+      <a class="btn-link" href="https://apex-tv.xyz/windows">Download here</a>
     </div>
+
   </div>
 
   <!-- VPN -->
-  <div class="section-heading">🛡️ VPN (optional)</div>
-  <div class="grid auto">
-    <div class="app-card">
-      <div class="app-title">VPN</div>
-      <a class="app-link" href="https://apex-tv.xyz/vpn">https://apex-tv.xyz/vpn</a>
-      <span class="small">Disable during troubleshooting if asked</span>
-      <div class="copy-row">
-        <button class="copy-btn" onclick="copy('3995390')">Copy code</button>
-        <button class="copy-btn" onclick="copy('https://apex-tv.xyz/vpn')">Copy link</button>
-      </div>
+  <div class="section-title">🛡️ VPN (optional)</div>
+  <div class="grid">
+
+    <div class="box">
+      <div class="box-title">Secure VPN</div>
+      <a class="btn-link" href="https://apex-tv.xyz/vpn">Download here</a>
+      <span class="small">Downloader: 3995390</span>
+      <button class="copy" onclick="copy('3995390')">Copy code</button>
     </div>
+
   </div>
 
   <!-- VAULT -->
-  <div class="section-heading">🔒 Apex Vault</div>
-  <div class="grid auto">
-    <div class="app-card">
-      <div class="app-title">Vault APK</div>
-      <a class="app-link" href="https://apex-tv.xyz/vault">https://apex-tv.xyz/vault</a>
-      <span class="small">Downloader: 1250834</span>
-      <div class="copy-row">
-        <button class="copy-btn" onclick="copy('1250834')">Copy code</button>
-        <button class="copy-btn" onclick="copy('https://apex-tv.xyz/vault')">Copy link</button>
-      </div>
-    </div>
-  </div>
+  <div class="section-title">🔒 Apex Vault</div>
+  <div class="grid">
 
-  <!-- SUPPORT -->
-  <div class="section-heading">❓ Support</div>
-  <div class="card">
-    Need help or login details resending? Open a ticket in Discord:<br>
-    <a href="/join">https://apex-tv.xyz/join</a>
+    <div class="box">
+      <div class="box-title">Apex Vault</div>
+      <a class="btn-link" href="https://apex-tv.xyz/vault">Download here</a>
+      <span class="small">Downloader: 1250834</span>
+      <button class="copy" onclick="copy('1250834')">Copy code</button>
+    </div>
+
   </div>
 
 </div>
