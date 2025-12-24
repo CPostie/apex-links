@@ -15,25 +15,15 @@ body{
   margin:0;
 }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
+.container{ max-width:1100px; margin:auto; padding:20px; }
 
-header{
-  text-align:center;
-  margin-top:40px;
-}
-
-header img{
-  width:130px;
-  margin-bottom:15px;
-}
+header{ text-align:center; margin-top:40px; }
+header img{ width:130px; margin-bottom:15px; }
 
 h1{ font-size:42px; margin:10px 0; }
 p.subtitle{ color:#aab8d8; }
 
+/* header buttons row */
 .actions{
   margin-top:10px;
   display:flex;
@@ -67,7 +57,6 @@ p.subtitle{ color:#aab8d8; }
   text-align:center;
 }
 
-/* inline copy rows */
 .inline-copy{
   display:inline-flex;
   align-items:center;
@@ -82,10 +71,7 @@ p.subtitle{ color:#aab8d8; }
   padding:5px 10px;
   cursor:pointer;
 }
-.copy.copied{
-  background:#1c7c10;
-  color:white;
-}
+.copy.copied{ background:#1c7c10; color:white; }
 
 nav{ margin-top:10px; text-align:center; }
 nav button{
@@ -188,8 +174,8 @@ window.onload=()=>{
   <div class="badge">
     <div style="font-size:14px; opacity:.9;">Your IP</div>
 
-    <div class="inline-copy">
-      <span id="iptext">…</span>
+    <div style="display:flex; justify-content:center; align-items:center; gap:8px;">
+      <span id="iptext" style="font-size:18px; font-weight:600;">…</span>
       <button class="copy" onclick="copyIP(this)">Copy</button>
     </div>
   </div>
@@ -224,9 +210,10 @@ window.onload=()=>{
 <div class="grid">
   <div class="card">
     <h3>Apex TV</h3>
+
     <a class="blue" href="#" target="_blank">Download</a>
 
-    <p class="inline-copy">
+    <p>
       <span>Downloader code: 1134921</span>
       <button class="copy" onclick="copyText('1134921',this)">Copy</button>
     </p>
@@ -234,9 +221,10 @@ window.onload=()=>{
 
   <div class="card">
     <h3>TiviMate</h3>
+
     <a class="blue" href="#" target="_blank">Download</a>
 
-    <p class="inline-copy">
+    <p>
       <span>Downloader code: 8175140</span>
       <button class="copy" onclick="copyText('8175140',this)">Copy</button>
     </p>
@@ -263,9 +251,10 @@ window.onload=()=>{
 <h2>🍎 iOS</h2>
 <div class="card">
   <h3>iOS Player</h3>
+
   <a class="blue" href="#" target="_blank">Download</a>
 
-  <p class="inline-copy">
+  <p>
     <span>Playlist host: 5555122</span>
     <button class="copy" onclick="copyText('5555122',this)">Copy</button>
   </p>
