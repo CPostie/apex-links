@@ -1,320 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apex TV — Apps & Downloads</title>
-
-<link rel="icon" type="image/png" href="https://i.imgur.com/ivUuq0Y.png">
+<link rel="icon" type="image/png" href="https://i.imgur.com/X9OeHkj.png">
 
 <style>
-/* --- General Layout --- */
-body {
-  margin: 0;
-  font-family: system-ui, Segoe UI, Roboto, Arial;
-  background: radial-gradient(circle at top, #0d1b2a, #0a1622 45%, #05101b);
-  color: #e8f0ff;
-  text-align: center;
+body{
+  margin:0;
+  font-family:Segoe UI,system-ui,-apple-system,Roboto,Arial;
+  background:radial-gradient(circle at top,#0c1730,#071020 50%,#050b16);
+  color:#e9eefc;
 }
 
-/* headers */
-h1 { margin-top: 0.5rem; font-size: 2.8rem; }
-h2 { margin-top: 3rem; }
+/* layout containers */
+.container{max-width:1050px;margin:auto;padding:22px;}
+.center{text-align:center}
 
-/* buttons & pills */
-button, a {
-  cursor: pointer;
-  text-decoration: none;
-}
+/* header */
+.logo img{height:90px;margin-top:20px}
+h1{font-size:42px;margin:18px 0}
+.top-line{margin-top:25px}
 
-/* top bar buttons */
-.top-btn {
-  display:inline-flex;
-  align-items:center;
-  gap:.4rem;
-  padding:.6rem 1.3rem;
-  border-radius:10px;
-  border:none;
-  font-size:1rem;
-  background:#4263eb;
-  color:white;
-  transition:.15s;
+/* buttons */
+.btn{
+  padding:10px 18px;border-radius:12px;
+  background:#3d6bff;color:white;text-decoration:none;
+  display:inline-flex;gap:8px;align-items:center;
+  transition:.15s
 }
-.top-btn:hover { transform:translateY(-2px); opacity:.92; }
+.btn:hover{opacity:.9}
 
-/* status badge */
-.status-pill {
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  padding:.6rem 1.1rem;
-  border-radius:100px;
-  background:#0e4429;
-  color:#a6ffc7;
-  font-weight:600;
-  margin-left:10px;
-}
-
-/* IP box */
-.ip-pill {
-  display:inline-flex;
-  align-items:center;
-  gap:.4rem;
-  margin-top:10px;
-  padding:.45rem .9rem;
-  background:#0a2540;
-  border-radius:10px;
-  border:1px solid #1c3d61;
-}
-.ip-pill span.copy {
-  color:#74c0fc;
-  cursor:pointer;
-}
-.ip-pill span.copy:hover { text-decoration:underline; }
+/* status + ip badges */
+.status{background:#0a692f;padding:10px 14px;border-radius:16px;margin-left:10px}
+.badge{padding:10px 14px;border-radius:14px;background:#091c35;margin-top:10px;display:inline-block}
+.copyable{cursor:pointer;color:#6aa7ff}
 
 /* nav shortcuts */
-.nav-row {
-  margin:15px auto 25px;
+.shortcuts{margin-top:18px}
+.shortcuts button{
+  background:#0e2344;color:#d8e7ff;
+  border:1px solid #1a335c;
+  padding:10px 18px;border-radius:12px;margin:5px;
+  cursor:pointer
 }
-.nav-row a {
-  padding:.5rem .9rem;
-  margin:0 .3rem;
-  border-radius:10px;
-  background:#0c2038;
-  border:1px solid #1a2d47;
-  color:#cfe4ff;
-}
-.nav-row a:hover { background:#103055; }
+.shortcuts button:hover{background:#12305f}
 
-/* utility box */
-.useful-box {
-  max-width:1300px;
-  margin:12px auto 25px;
-  padding:10px 15px;
+/* banner card */
+.banner{
+  margin-top:20px;
   border-radius:14px;
-  background:#09192d;
-  border:1px solid #122a47;
-  text-align:left;
+  background:#081a33;
+  padding:14px;border:1px solid #102b52;
 }
 
-/* standard container */
-.section {
-  max-width:1300px;
-  margin:20px auto;
-  text-align:left;
+/* section headers */
+.section-header{
+  margin-top:65px;
+  font-size:26px;
+  font-weight:700;
+  display:flex;gap:10px;align-items:center;
 }
 
-/* card grid */
-.grid {
+/* app cards */
+.cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(450px,1fr));
   gap:18px;
+  margin-top:12px;
 }
-
-/* cards */
-.card {
-  background:#081a2f;
-  border:1px solid #143255;
-  border-radius:16px;
+.card{
+  background:#081a33;
+  border:1px solid #102b52;
+  border-radius:18px;
   padding:22px;
-  text-align:center;
-  transition:.18s;
+  min-height:190px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 }
-.card:hover { transform:translateY(-2px); box-shadow:0 8px 26px rgba(0,0,0,.25); }
-
-.dl-btn {
-  margin-top:8px;
-  background:#2b7bff;
-  border:none;
+.card-title{font-size:19px;margin-bottom:10px}
+.link-btn{
+  background:#3d6bff;
   color:white;
-  padding:.55rem 1.2rem;
-  border-radius:9px;
-}
-.small-note {
-  margin-top:10px;
-  opacity:.8;
-}
-
-/* copy button */
-.copy-btn {
-  margin-top:8px;
-  background:#0f2e57;
-  border:1px solid #2b6bf0;
-  color:#9fc9ff;
-  padding:.4rem .9rem;
-  border-radius:8px;
-}
-.copy-btn:hover { background:#103c77; }
-
-/* FAQ */
-details {
-  background:#0c2038;
-  border:1px solid #173458;
+  padding:10px 18px;
   border-radius:14px;
-  padding:12px 14px;
-  margin-bottom:12px;
+  margin-top:10px;
+  cursor:pointer;
+  text-decoration:none
 }
+.code{margin-top:10px;color:#a7b8d8}
+.copy-btn{
+  margin-top:6px;
+  background:#0e2344;
+  color:#a7c7ff;
+  border:1px solid #1a335c;
+  padding:6px 12px;border-radius:10px;
+  cursor:pointer
+}
+.copy-btn.copied{color:#9dffc7}
 
-/* footer */
-footer {
-  margin:60px 0 25px;
-  opacity:.6;
-}
+/* faq */
+details{margin-top:12px;background:#081a33;border-radius:14px;padding:14px;border:1px solid #102b52}
+summary{cursor:pointer;font-size:16px;font-weight:700}
+footer{text-align:center;margin:45px 0 20px;color:#7285aa}
 </style>
 </head>
 
 <body>
+<div class="container center">
 
-<img src="https://i.imgur.com/ivUuq0Y.png" alt="ApexTV Logo" width="110">
+<div class="logo">
+<img src="https://i.imgur.com/X9OeHkj.png">
+</div>
 
 <h1>Apex TV — Apps & Downloads</h1>
-<p>Everything you need — apps, tools and setup links — in one place.</p>
+<div>Everything you need — apps, tools and setup links — in one place.</div>
 
-<div>
-  <a class="top-btn" href="https://discord.gg/YSJYCXQPAa">💬 Join Discord</a>
-
-  <!-- CHANGE THIS WORD TO OFFLINE WHEN NEEDED -->
-  <span class="status-pill">Service Status: <span id="status">Online</span></span>
+<div class="top-line">
+<a class="btn" href="https://discord.gg/YSJYCXQPAa">💬 Join Discord</a>
+<span class="status">Service Status: <strong>Online</strong></span>
 </div>
 
-<div class="ip-pill">
-  Your IP: <span id="userIp"> Detecting…</span> —
-  <span class="copy" onclick="copyIP()">copy</span>
+<div class="badge">
+Your IP: <span id="ip">Detecting…</span> —
+<span class="copyable" onclick="copyIP()">copy</span>
 </div>
 
-<div class="nav-row">
-  <a href="#androidtv">Android TV</a>
-  <a href="#mobile">Mobile</a>
-  <a href="#ios">iOS</a>
-  <a href="#windows">Windows</a>
-  <a href="#vpn">VPN</a>
-  <a href="#vault">Vault</a>
-  <a href="#faq">FAQ</a>
+<div class="shortcuts">
+<button onclick="scrollToId('tv')">Android TV</button>
+<button onclick="scrollToId('mobile')">Mobile</button>
+<button onclick="scrollToId('ios')">iOS</button>
+<button onclick="scrollToId('windows')">Windows</button>
+<button onclick="scrollToId('vpn')">VPN</button>
+<button onclick="scrollToId('vault')">Vault</button>
+<button onclick="scrollToId('faq')">FAQ</button>
 </div>
 
-<div class="useful-box">
-  ⭐ <strong>Useful:</strong> Live fixtures & schedules — 
-  <a href="https://fixturehub.cc" target="_blank">https://fixturehub.cc</a>
+<div class="banner">
+⭐ <strong>Useful:</strong> Live fixtures & schedules — 
+<a href="https://fixturehub.cc" target="_blank">https://fixturehub.cc</a>
 </div>
 
-<!-- BEFORE YOU START -->
-<div class="section">
-  <h2>🔧 Before You Start</h2>
-
-  <div class="card" style="text-align:left;">
-    You’ll need the <strong>Downloader app</strong> on Firestick/Chromecast.  
-    <br><br>
-    Setup video: <a href="#">Watch here</a>
-    <br><br>
-    All apps show the same content — choose whichever you prefer.
-  </div>
+<!-- ==========================  BEFORE YOU START  ========================== -->
+<div class="section-header">🛠️ Before You Start</div>
+<div class="banner">
+You will need the <strong>Downloader app</strong> on Firestick/Chromecast.  
+<br><br>
+Setup video: <a href="https://youtu.be/MCy4vFD_FQk" target="_blank">Watch here</a>
+<br><br>
+<em>All apps show the same content — choose whichever you prefer.</em>
 </div>
 
-<!-- ANDROID TV -->
-<div class="section" id="androidtv">
-  <h2>📺 Android TV & Firestick</h2>
-  <div class="grid">
 
-    <div class="card">
-      <h3>Apex TV (XC)</h3>
-      <button class="dl-btn">Download Here</button>
-      <div class="small-note">Downloader code: 1134921</div>
-      <button class="copy-btn" onclick="copy('1134921')">Copy code</button>
-    </div>
+<!-- ==========================  ANDROID TV  ========================== -->
+<div class="section-header" id="tv">📺 Android TV & Firestick</div>
 
-    <div class="card">
-      <h3>TiviMate Premium</h3>
-      <button class="dl-btn">Download Here</button>
-      <div class="small-note">Downloader code: 8175140</div>
-      <button class="copy-btn" onclick="copy('8175140')">Copy code</button>
-    </div>
-
-  </div>
+<div class="cards">
+<div class="card">
+<div class="card-title">Apex TV (XC)</div>
+<a class="link-btn" href="https://apex-tv.xyz/xc">Download Here</a>
+<div class="code">Downloader code: 1134921</div>
+<button class="copy-btn" onclick="copyCode(this,'1134921')">Copy code</button>
 </div>
 
-<!-- MOBILE -->
-<div class="section" id="mobile">
-  <h2>📱 Android Mobile</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Apex Mobile</h3>
-      <button class="dl-btn">Download Here</button>
-    </div>
-
-    <div class="card">
-      <h3>Backup App</h3>
-      <button class="dl-btn">Download Here</button>
-    </div>
-
-  </div>
+<div class="card">
+<div class="card-title">TiviMate Premium</div>
+<a class="link-btn" href="https://apex-tv.xyz/tivi">Download Here</a>
+<div class="code">Downloader code: 8175140</div>
+<button class="copy-btn" onclick="copyCode(this,'8175140')">Copy code</button>
+</div>
 </div>
 
-<!-- IOS -->
-<div class="section" id="ios">
-  <h2>🍎 iOS</h2>
+<!-- ==========================  MOBILE  ========================== -->
+<div class="section-header" id="mobile">📱 Android Mobile</div>
 
-  <div class="card">
-    <h3>iOS Player</h3>
-    <button class="dl-btn">Download Here</button>
-    <div class="small-note">Playlist Host URL: 5555122</div>
-    <button class="copy-btn" onclick="copy('5555122')">Copy code</button>
-  </div>
+<div class="cards">
+<div class="card">
+<div class="card-title">Apex Mobile</div>
+<a class="link-btn" href="https://apex-tv.xyz/mobile">Download Here</a>
 </div>
 
-<!-- WINDOWS -->
-<div class="section" id="windows">
-  <h2>💻 Windows</h2>
-
-  <div class="card">
-    <h3>Windows App</h3>
-    <button class="dl-btn">Download Here</button>
-  </div>
+<div class="card">
+<div class="card-title">Backup App</div>
+<a class="link-btn" href="https://apex-tv.xyz/mobilebackup">Download Here</a>
+</div>
 </div>
 
-<!-- VPN -->
-<div class="section" id="vpn">
-  <h2>🛡 VPN</h2>
-  <div class="card">
-    <h3>Secure VPN</h3>
-    <button class="dl-btn">Download Here</button>
-    <div class="small-note">Downloader code: 443322</div>
-    <button class="copy-btn" onclick="copy('443322')">Copy code</button>
-  </div>
+
+<!-- ==========================  iOS  ========================== -->
+<div class="section-header" id="ios">🍎 iOS</div>
+
+<div class="cards">
+<div class="card">
+<div class="card-title">iOS Player</div>
+<a class="link-btn" href="https://apex-tv.xyz/iOS">Download Here</a>
+<div class="code">Playlist Host URL: 5555122</div>
+<button class="copy-btn" onclick="copyCode(this,'5555122')">Copy code</button>
+</div>
 </div>
 
-<!-- VAULT -->
-<div class="section" id="vault">
-  <h2>🔐 Vault</h2>
-  <div class="card">
-    <h3>Apex Vault</h3>
-    <button class="dl-btn">Download Here</button>
-  </div>
+
+<!-- ==========================  WINDOWS  ========================== -->
+<div class="section-header" id="windows">💻 Windows</div>
+
+<div class="cards">
+<div class="card">
+<div class="card-title">Windows App</div>
+<a class="link-btn" href="https://apex-tv.xyz/windows">Download Here</a>
+</div>
 </div>
 
-<!-- FAQ -->
-<div class="section" id="faq">
-  <h2>❓ FAQ & Troubleshooting</h2>
 
-  <details><summary>Login / Access problems</summary>Lowercase username, disable VPN, ensure https, expired? Open ticket.</details>
-  <details><summary>App playback issues</summary>Clear cache, restart router, change player, cross-test device, disable VPN.</details>
-  <details><summary>Firestick setup help</summary>Enable developer options, install Downloader, enter app URLs.</details>
-  <details><summary>Renewal & expiry</summary>Expiry shows in app homepage — renew via Discord & refresh playlist.</details>
+<!-- ==========================  VPN  ========================== -->
+<div class="section-header" id="vpn">🛡️ VPN</div>
 
+<div class="cards">
+<div class="card">
+<div class="card-title">Apex VPN</div>
+<a class="link-btn" href="https://apex-tv.xyz/vpn">Download Here</a>
+<div class="code">Downloader code: 3995390</div>
+<button class="copy-btn" onclick="copyCode(this,'3995390')">Copy code</button>
+</div>
 </div>
 
-<footer>
-  ApexTV | 2025
-</footer>
+
+<!-- ==========================  VAULT  ========================== -->
+<div class="section-header" id="vault">🔒 Apex Vault</div>
+
+<div class="cards">
+<div class="card">
+<div class="card-title">Apex Vault</div>
+<a class="link-btn" href="https://apex-tv.xyz/vault">Download Here</a>
+<div class="code">Downloader code: 1250834</div>
+<button class="copy-btn" onclick="copyCode(this,'1250834')">Copy code</button>
+</div>
+</div>
+
+
+<!-- ==========================  FAQ  ========================== -->
+<div class="section-header" id="faq">❓ FAQ</div>
+
+<details>
+<summary>Login & Access Problems</summary>
+<br>
+Lowercase username · Try disabling VPN · Ensure https:// server · If expired, renew in Discord support.
+</details>
+
+<details>
+<summary>Playback Troubleshooting</summary>
+<br>
+Check service notices · Clear cache & reboot router · Try HLS · Switch video player · Test another device.
+</details>
+
+<footer>ApexTV | 2025</footer>
+
+</div>
 
 <script>
-function copy(text){ navigator.clipboard.writeText(text); alert("Copied: "+text); }
-function copyIP(){ navigator.clipboard.writeText(document.getElementById("userIp").innerText); alert("IP copied"); }
+function scrollToId(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
 
+function copyCode(btn,val){
+  navigator.clipboard.writeText(val);
+  btn.innerText="Copied!";
+  btn.classList.add("copied");
+  setTimeout(()=>{btn.innerText="Copy code";btn.classList.remove("copied")},1200);
+}
+
+function copyIP(){
+  const ip=document.getElementById("ip").innerText;
+  navigator.clipboard.writeText(ip);
+  const el=document.querySelector(".copyable");
+  el.innerText="copied!";
+  setTimeout(()=>el.innerText="copy",1200);
+}
+
+// fetch IP
 fetch("https://api.ipify.org?format=json")
-.then(r=>r.json())
-.then(d=>document.getElementById("userIp").innerText = d.ip);
+.then(r=>r.json()).then(data=>{document.getElementById("ip").innerText=data.ip});
 </script>
 
 </body>
