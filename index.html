@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Apex TV — Apps & Downloads</title>
 
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="logo.png">
 
 <style>
@@ -19,7 +18,7 @@
   --brand:#4ea1ff;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Roboto,Arial;}
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Roboto,Arial}
 
 body{
   background:
@@ -31,43 +30,53 @@ body{
 .wrapper{max-width:1050px;margin:0 auto 90px;padding:22px}
 
 /* Header */
-.logo{width:115px;margin:20px auto 8px;display:block;opacity:.98}
-
-h1{text-align:center;margin-top:2px;font-size:32px}
-.tagline{text-align:center;margin:8px 0 10px;color:var(--muted)}
+.logo{width:140px;margin:22px auto 10px;display:block}
+h1{text-align:center;font-size:32px}
+.tagline{text-align:center;margin:6px 0 10px;color:var(--muted)}
 
 .btn-discord{
   background:#5865F2;border:none;color:white;padding:9px 16px;
   border-radius:10px;display:flex;align-items:center;gap:7px;
   margin:8px auto 12px;cursor:pointer;font-size:14px
 }
-.btn-discord:hover{opacity:.92}
 
-/* Top navigation */
-.nav{margin-top:6px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.nav a{color:#acd4ff;text-decoration:none;font-size:13px;opacity:.85}
-.nav a:hover{opacity:1}
+.nav{
+  margin-top:12px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.nav a{
+  color:#bcd8ff;
+  text-decoration:none;
+  font-size:14px;
+  padding:6px 10px;
+  border-radius:8px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+}
+.nav a:hover{background:rgba(255,255,255,.15)}
 
-/* Sections */
-.section{margin-top:38px}
+.section{margin-top:40px}
 .section-title{
   font-size:20px;
   font-weight:700;
-  margin-bottom:14px;
+  margin-bottom:16px;
   display:flex;
-  gap:8px;
   align-items:center;
+  gap:8px;
 }
 
-/* info panel */
 .panel{
   background:var(--panel);
   border:1px solid var(--border);
   border-radius:14px;
   padding:16px 18px;
+  line-height:1.55;
 }
 
-/* grid + cards */
+/* grid cards */
 .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 
 .box{
@@ -80,39 +89,26 @@ h1{text-align:center;margin-top:2px;font-size:32px}
   max-width:340px;
   transition:.18s ease;
 }
-.box:hover{transform:translateY(-4px);box-shadow:0 18px 30px rgba(0,0,0,.38)}
-.box h3{margin-bottom:6px}
+.box:hover{transform:translateY(-4px);box-shadow:0 18px 30px rgba(0,0,0,.35)}
+.box h3{margin-bottom:4px}
 .meta{font-size:12px;color:var(--muted);margin-top:6px}
 
-.btn{
-  margin-top:6px;
-  background:var(--brand);
-  border:none;
-  color:white;
-  padding:9px 15px;
-  border-radius:10px;
-  cursor:pointer;
-  font-size:14px;
-}
-.copy-btn{
-  margin-top:6px;
-  background:#1c2f53;
-  color:#cfe0ff;
-  border:1px solid #233d6d;
-  padding:5px 10px;
-  border-radius:8px;
-  font-size:12px;
-  cursor:pointer;
-}
+.btn{margin-top:6px;background:var(--brand);border:none;color:white;
+  padding:9px 15px;border-radius:10px;cursor:pointer;font-size:14px}
+.copy-btn{margin-top:6px;background:#1c2f53;color:#cfe0ff;border:1px solid #233d6d;
+  padding:5px 10px;border-radius:8px;font-size:12px;cursor:pointer}
+
 .grid .box:only-child{flex:1 1 100%;max-width:none}
 .grid .box:nth-child(1):nth-last-child(2),
-.grid .box:nth-child(2):nth-last-child(1){flex:1 1 calc(50% - 10px);max-width:none}
+.grid .box:nth-child(2):nth-last-child(1){
+  flex:1 1 calc(50% - 10px);max-width:none
+}
 
 /* reveal animation */
 .hidden{opacity:0;transform:translateY(18px);transition:.32s ease}
 .show{opacity:1;transform:none}
 
-/* FAQ */
+/* FAQ formatting */
 details{
   margin-top:12px;
   background:#0f2346;
@@ -120,15 +116,16 @@ details{
   border-radius:12px;
   padding:12px 14px;
 }
-summary{
-  cursor:pointer;
-  font-weight:600;
-}
-details p{margin-top:8px;line-height:1.55}
+summary{cursor:pointer;font-weight:600;user-select:none;caret-color:transparent}
+details p{margin-top:8px;line-height:1.6}
 details code{background:#0d1e3f;padding:2px 6px;border-radius:6px}
 
 /* Footer */
 footer{text-align:center;margin-top:44px;color:#8294c3;font-size:13px}
+
+/* Stop browser text cursor appearing */
+button, summary, nav a {caret-color:transparent;outline:none}
+summary:focus, nav a:focus, button:focus {outline:none}
 </style>
 </head>
 
@@ -136,7 +133,7 @@ footer{text-align:center;margin-top:44px;color:#8294c3;font-size:13px}
 
 <div class="wrapper">
 
-<img src="logo.png" class="logo" alt="ApexTV Logo">
+<img src="logo.png" class="logo" alt="Apex TV">
 
 <h1>Apex TV — Apps & Downloads</h1>
 <p class="tagline">Everything you need — apps, tools and setup links — in one place.</p>
@@ -145,6 +142,14 @@ footer{text-align:center;margin-top:44px;color:#8294c3;font-size:13px}
   <button class="btn-discord">💬 Join Discord</button>
 </a>
 
+<!-- uptime badge -->
+<div style="text-align:center;margin-top:4px;">
+  <span style="background:#0f2d27;border:1px solid #1f5a4c;padding:5px 10px;border-radius:10px;color:#6ff7c5">
+    🟢 Service Status: <b>Online</b>
+  </span>
+</div>
+
+<!-- quick nav -->
 <nav class="nav">
   <a href="#androidtv">Android TV</a>
   <a href="#mobile">Mobile</a>
@@ -155,17 +160,23 @@ footer{text-align:center;margin-top:44px;color:#8294c3;font-size:13px}
   <a href="#faq">FAQ</a>
 </nav>
 
+<!-- BEFORE YOU START -->
 <div class="section">
   <div class="section-title">⚙ Before you start</div>
+
   <div class="panel">
-    You will need the <b>Downloader app</b> on Firestick/Chromecast.<br><br>
-    Setup video: 
-    <a href="https://youtu.be/MCy4vFD_FQk" target="_blank">https://youtu.be/MCy4vFD_FQk</a><br><br>
-    All apps show the same content — choose whichever you prefer.
+    <b>Good news:</b> you only ever need to install <b>one</b> app.  
+    All apps show the same content — just choose whichever layout you like.<br><br>
+
+    <b>Firestick / Android TV:</b> you must install <b>Downloader</b> first.<br>
+    Setup video: <a href="https://youtu.be/MCy4vFD_FQk" target="_blank">https://youtu.be/MCy4vFD_FQk</a><br><br>
+
+    💡 <b>One-click install:</b> open Downloader → enter the code shown next to each app → install.  
+    No typing long links, no file managers.
   </div>
 </div>
 
-<!-- Android TV -->
+<!-- ANDROID TV -->
 <div id="androidtv" class="section">
   <div class="section-title">📺 Android TV & Firestick</div>
   <div class="grid">
@@ -187,7 +198,7 @@ footer{text-align:center;margin-top:44px;color:#8294c3;font-size:13px}
   </div>
 </div>
 
-<!-- Mobile -->
+<!-- MOBILE -->
 <div id="mobile" class="section">
   <div class="section-title">🤖 Android Mobile</div>
 
@@ -222,7 +233,7 @@ footer{text-align:center;margin-top:44px;color:#8294c3;font-size:13px}
   </div>
 </div>
 
-<!-- Windows -->
+<!-- WINDOWS -->
 <div id="windows" class="section">
   <div class="section-title">🖥 Windows</div>
 
@@ -252,7 +263,7 @@ footer{text-align:center;margin-top:44px;color:#8294c3;font-size:13px}
   </div>
 </div>
 
-<!-- Vault -->
+<!-- VAULT -->
 <div id="vault" class="section">
   <div class="section-title">🔐 Apex Vault</div>
 
@@ -273,39 +284,49 @@ footer{text-align:center;margin-top:44px;color:#8294c3;font-size:13px}
   <details>
     <summary>🔐 Login / Access Problems</summary>
     <p>
-      1️⃣ Make sure your username is <b>lowercase</b><br>
-      2️⃣ Disable your VPN (causes DNS auth issues)<br>
-      3️⃣ Server must start with <b>https://</b><br>
-      4️⃣ If expired, renew via Discord.<br><br>
-      Still stuck? Open a support ticket.
+      • Username must be <b>lower-case</b><br>
+      • Turn off VPN (first login fails with VPN)<br>
+      • Server must be: <code>https://apextv.cc</code><br>
+      • If expired — renew in Discord<br><br>
+      💬 Still stuck? Open a support ticket.
     </p>
   </details>
 
   <details>
     <summary>🎬 Playback Issues</summary>
     <p>
-      1️⃣ Check Discord service notices<br>
-      2️⃣ Clear app cache + reboot router<br>
-      3️⃣ Switch to HLS + increase buffer<br>
-      4️⃣ Try EXO/VLC player swap<br>
-      5️⃣ Disable VPN or change location<br>
-      6️⃣ Test another device/network<br>
-      Still stuck? Support ticket 👍
+      • Clear app cache + restart router<br>
+      • Change player (EXO ↔ VLC)<br>
+      • Switch to <b>HLS</b> + increase buffer<br>
+      • Disable VPN or try another location<br>
+      • Try another channel/region feed<br><br>
+      If problems only happen on match days — use alternate streams.
     </p>
   </details>
 
   <details>
-    <summary>📅 Renewal / Expiry</summary>
+    <summary>⚙ One-Click Install (explained)</summary>
     <p>
-      Expiry shows in your app. If expired, renew in Discord — refresh playlist after renewal.
+      1️⃣ Open <b>Downloader</b><br>
+      2️⃣ Type the short code shown next to the app<br>
+      3️⃣ Press install → Done → Delete file<br><br>
+      The app appears under <b>Apps & Channels</b>.
     </p>
   </details>
 
   <details>
-    <summary>⚽ Football Streaming Help</summary>
+    <summary>📅 Renewals</summary>
     <p>
-      Try alternative streams, check Sky/TNT/UHD categories, and see Discord listings.  
-      If issues: reboot, switch player, change buffer, disable VPN.
+      Your expiry shows inside the app.  
+      Renew in Discord → refresh your playlist afterwards.
+    </p>
+  </details>
+
+  <details>
+    <summary>⚽ Football Streams</summary>
+    <p>
+      Matches usually have multiple streams — check EPL, Sky/TNT, or backups.  
+      Avoid Wi-Fi extenders, and restart router before big games.
     </p>
   </details>
 
