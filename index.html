@@ -4,152 +4,271 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Apex TV — Apps & Downloads</title>
-<link rel="icon" type="image/png" href="logo.png" />
+
+<link rel="icon" href="https://i.imgur.com/3GJpE8x.png">
 
 <style>
-/* (unchanged core styling – trimmed explanation to save space)
-   key edits are spacing + FAQ + logo reference */
-body{margin:0;background:#071020;color:#e9eefc;font-family:Segoe UI,system-ui}
-.container{max-width:1050px;margin:auto;padding:22px}
-.center{text-align:center}
+body{
+  background:#071427;
+  color:#e9eefc;
+  font-family:Segoe UI,Roboto,Arial;
+  margin:0;
+}
 
-.logo img{height:95px;margin-top:22px}
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
 
-h1{margin:10px 0 14px;font-size:44px}
+header{
+  text-align:center;
+  margin-top:40px;
+}
 
-.status{background:#0a692f;padding:10px 14px;border-radius:16px;margin-left:10px}
-.badge{padding:10px 14px;border-radius:14px;background:#091c35;margin-top:10px;display:inline-block}
-.copyable{cursor:pointer;color:#6aa7ff}
+header img{
+  width:130px;
+  margin-bottom:15px;
+}
 
-.shortcuts{margin-top:16px}
-.shortcuts button{background:#0e2344;border:1px solid #18305a;padding:10px 18px;border-radius:12px;margin:5px;color:#cde1ff}
-.shortcuts button:hover{background:#15366d}
+h1{ font-size:42px; margin:10px 0; }
+p.subtitle{ color:#aab8d8; }
 
-.banner{margin-top:16px;border-radius:14px;background:#081a33;padding:14px;border:1px solid #102b52}
+.button{
+  background:#4267ff;
+  color:white;
+  padding:10px 22px;
+  border-radius:10px;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  border:none;
+  cursor:pointer;
+  font-size:15px;
+}
+.status{
+  margin-left:10px;
+  background:#0d5a2b;
+}
 
-/* 🔽 spacing refinement */
-.section-header{
-  margin-top:45px;
-  font-size:26px;
-  font-weight:700;
+.badge{
+  background:#0a1d38;
+  padding:14px;
+  border-radius:12px;
   display:flex;
   gap:10px;
-  align-items:center;
+  margin:15px auto 5px;
+  width:max-content;
 }
-.section-header:not(:first-of-type){ margin-top:35px; }
 
-/* cards */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(450px,1fr));gap:18px;margin-top:10px}
-.card{background:#081a33;border:1px solid #102b52;border-radius:18px;padding:22px;
-      min-height:190px;display:flex;flex-direction:column;justify-content:center;align-items:center}
-.card-title{font-size:19px}
-.link-btn{background:#3d6bff;color:white;padding:10px 18px;border-radius:14px;margin-top:10px;text-decoration:none}
-.copy-btn{background:#0e2344;border:1px solid #17305d;color:#a8c4ff;padding:6px 12px;border-radius:10px;margin-top:6px}
-.copy-btn.copied{color:#9dffc7}
+nav{ margin-top:10px; text-align:center; }
+nav button{
+  background:#0b1f3f;
+  color:#dfe9ff;
+  border:1px solid #1d3c72;
+  border-radius:10px;
+  padding:8px 16px;
+  margin:6px;
+  cursor:pointer;
+}
+nav button:hover{ background:#123a73; }
 
-/* faq */
-details{margin-top:10px;background:#081a33;border-radius:14px;padding:14px;border:1px solid #102b52}
-summary{cursor:pointer;font-size:16px;font-weight:700}
-footer{text-align:center;margin:45px 0 20px;color:#7f90af}
+.section{
+  margin-top:25px;
+}
+
+.box{
+  background:#0a1e3a;
+  border:1px solid #12345f;
+  border-radius:16px;
+  padding:25px;
+  margin-top:10px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:#06142a;
+  border:1px solid #12345f;
+  border-radius:16px;
+  padding:20px;
+  text-align:center;
+}
+
+.card button{
+  margin-top:8px;
+  padding:9px 18px;
+  border-radius:9px;
+  border:none;
+  cursor:pointer;
+}
+.blue{ background:#375dff; color:white; }
+.copy{ margin-top:6px; background:#0d203e; color:#a8c5ff; }
+
+.copy.copied{ background:#1c7c10; color:white; }
+
+.faq-item{
+  margin:10px 0;
+}
+.faq-item summary{
+  background:#0b2349;
+  padding:12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:15px;
+}
+footer{ text-align:center; padding:18px; color:#8ca2c8; }
 </style>
+
+<script>
+async function copyText(text,btn){
+  await navigator.clipboard.writeText(text);
+  btn.classList.add("copied");
+  btn.innerText="Copied!";
+  setTimeout(()=>{btn.classList.remove("copied");btn.innerText="Copy code";},1200);
+}
+
+async function copyIP(){
+  const el=document.getElementById("ipcopy");
+  await navigator.clipboard.writeText(el.innerText.trim());
+  el.innerText="Copied!";
+  setTimeout(()=>location.reload(),1200);
+}
+
+window.onload=()=>{ fetch("https://api.ipify.org?format=json")
+.then(r=>r.json())
+.then(d=>document.getElementById("ipcopy").innerText=d.ip); };
+</script>
 </head>
 
 <body>
-<div class="container center">
+<div class="container">
 
-<div class="logo">
-  <img src="logo.png" alt="Apex TV logo">
+<header>
+  <img src="https://i.imgur.com/3GJpE8x.png">
+  <h1>Apex TV — Apps & Downloads</h1>
+  <p class="subtitle">Everything you need — apps, tools and setup links — in one place.</p>
+
+  <button class="button">Join Discord</button>
+  <button class="button status">Service Status: Online</button>
+
+  <div class="badge">Your IP: <span id="ipcopy" style="cursor:pointer" onclick="copyIP()">…</span></div>
+</header>
+
+<nav>
+  <button onclick="location='#tv'">Android TV</button>
+  <button onclick="location='#mobile'">Mobile</button>
+  <button onclick="location='#ios'">iOS</button>
+  <button onclick="location='#win'">Windows</button>
+  <button onclick="location='#vpn'">VPN</button>
+  <button onclick="location='#vault'">Vault</button>
+  <button onclick="location='#faq'">FAQ</button>
+</nav>
+
+<div class="box">
+  ⭐ Useful: live fixtures — <a href="https://fixturehub.cc" style="color:#8fbaff">fixturehub.cc</a>
 </div>
 
-<h1>Apex TV — Apps & Downloads</h1>
-<div>Everything you need — apps, tools and setup links — in one place.</div>
-
-<div class="top-line" style="margin-top:22px">
-  <a class="btn" style="background:#3d6bff;padding:10px 18px;border-radius:12px"
-     href="https://discord.gg/YSJYCXQPAa">💬 Join Discord</a>
-  <span class="status">Service Status: <strong>Online</strong></span>
+<!-- BEFORE START -->
+<section class="section" id="start">
+<h2>🔧 Before You Start</h2>
+<div class="box">
+  <p>You will need the <b>Downloader app</b> on Firestick/Chromecast.</p>
+  <p>Setup video: <a href="#">Watch here</a></p>
+  <p><i>All apps show the same content — choose whichever you prefer.</i></p>
 </div>
+</section>
 
-<div class="badge">
-  Your IP: <span id="ip">Detecting…</span> —
-  <span class="copyable" onclick="copyIP()">copy</span>
+<!-- ANDROID TV -->
+<section id="tv" class="section">
+<h2>📺 Android TV & Firestick</h2>
+
+<div class="grid">
+  <div class="card">
+    <h3>Apex TV</h3>
+    <button class="blue">Download</button>
+    <p>Downloader code: 1134921</p>
+    <button class="copy" onclick="copyText('1134921',this)">Copy code</button>
+  </div>
+
+  <div class="card">
+    <h3>TiviMate</h3>
+    <button class="blue">Download</button>
+    <p>Downloader code: 8175140</p>
+    <button class="copy" onclick="copyText('8175140',this)">Copy code</button>
+  </div>
 </div>
+</section>
 
-<div class="shortcuts">
-<button onclick="scrollToId('tv')">Android TV</button>
-<button onclick="scrollToId('mobile')">Mobile</button>
-<button onclick="scrollToId('ios')">iOS</button>
-<button onclick="scrollToId('windows')">Windows</button>
-<button onclick="scrollToId('vpn')">VPN</button>
-<button onclick="scrollToId('vault')">Vault</button>
-<button onclick="scrollToId('faq')">FAQ</button>
+<!-- MOBILE -->
+<section id="mobile" class="section">
+<h2>📱 Android Mobile</h2>
+<div class="grid">
+<div class="card">
+  <h3>Apex Mobile</h3>
+  <button class="blue">Download</button>
 </div>
-
-<div class="banner">
-⭐ <strong>Useful:</strong> Live fixtures & schedules — 
-<a href="https://fixturehub.cc" target="_blank">https://fixturehub.cc</a>
+<div class="card">
+  <h3>Backup App</h3>
+  <button class="blue">Download</button>
 </div>
-
-<!-- BEFORE YOU START -->
-<div class="section-header">🛠️ Before You Start</div>
-<div class="banner">
-You will need the <strong>Downloader app</strong> on Firestick/Chromecast.<br><br>
-Setup video: <a href="https://youtu.be/MCy4vFD_FQk" target="_blank">Watch here</a><br><br>
-<em>All apps show the same content — choose whichever you prefer.</em>
 </div>
+</section>
 
-<!-- sections stay same (removed here for brevity — identical content) -->
+<!-- iOS -->
+<section id="ios" class="section">
+<h2>🍎 iOS</h2>
+<div class="card">
+  <h3>iOS Player</h3>
+  <button class="blue">Download</button>
+  <p>Playlist host: 5555122</p>
+  <button class="copy" onclick="copyText('5555122',this)">Copy code</button>
+</div>
+</section>
+
+<!-- WINDOWS -->
+<section id="win" class="section">
+<h2>💻 Windows</h2>
+<div class="card">
+  <h3>Windows App</h3>
+  <button class="blue">Download</button>
+</div>
+</section>
+
+<!-- VPN -->
+<section id="vpn" class="section">
+<h2>🛡 VPN</h2>
+<div class="card">
+  <h3>Recommended VPN</h3>
+  <button class="blue">Download</button>
+</div>
+</section>
 
 <!-- FAQ -->
-<div class="section-header" id="faq">❓ FAQ</div>
+<section id="faq" class="section">
+<h2>❓ FAQ</h2>
 
-<details>
-<summary>🔐 How do I fix login / access problems?</summary>
-<br>
-1️⃣ Make sure your username is <em>all lowercase</em><br>
-2️⃣ Disable any VPN temporarily<br>
-3️⃣ If using your own app, the server must start with <strong>https://</strong><br>
-4️⃣ If expired, renew inside Discord support<br><br>
-If you're still stuck — open a support ticket.
-</details>
+<div class="faq-item">
+  <details>
+    <summary>🔐 How do I fix login / access problems?</summary>
+    Lowercase username • Disable VPN • Ensure https:// • Expired? Renew in Discord.
+  </details>
+</div>
 
-<details>
-<summary>🎬 Why is playback buffering / glitching?</summary>
-<br>
-• Check service notices in Discord<br>
-• Clear app cache & reboot your router<br>
-• Try stream type: <strong>HLS</strong><br>
-• Switch between EXO / VLC players<br>
-• Test another device or network<br><br>
-Still stuck? Open a ticket and we’ll help.
-</details>
+<div class="faq-item">
+  <details>
+    <summary>🎬 Why is playback buffering?</summary>
+    Check notices • Clear cache • Try HLS • Switch player • Try another device
+  </details>
+</div>
+</section>
 
 <footer>ApexTV | 2025</footer>
 
 </div>
-
-<script>
-function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
-
-function copyCode(btn,val){
-  navigator.clipboard.writeText(val)
-  btn.innerText="Copied!"
-  btn.classList.add("copied")
-  setTimeout(()=>{btn.innerText="Copy code";btn.classList.remove("copied")},1100)
-}
-
-function copyIP(){
-  const ip=document.getElementById("ip").innerText
-  navigator.clipboard.writeText(ip)
-  const el=document.querySelector(".copyable")
-  el.innerText="copied!"
-  setTimeout(()=>el.innerText="copy",1100)
-}
-
-fetch("https://api.ipify.org?format=json")
-.then(r=>r.json())
-.then(data=>document.getElementById("ip").innerText=data.ip)
-</script>
-
 </body>
 </html>
