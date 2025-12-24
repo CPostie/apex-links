@@ -3,130 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apex TV – Downloads & Tools</title>
+  <title>Apex TV</title>
 
   <style>
-    body { font-family: system-ui, Arial, sans-serif; margin: 0; background:#0b0e14; color:#e8ecf3; }
-    header { padding: 24px; text-align:center; }
-    h1 { margin:0; }
-    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .section { margin: 28px 0; }
-    .card {
-      background:#141a24;
-      border-radius:14px;
-      padding:18px 20px;
-      margin:10px 0;
-      border:1px solid #1f2937;
+    :root {
+      --bg: #0b1220;
+      --card: #111a2c;
+      --accent: #4ea1ff;
+      --text: #e8edf5;
+      --muted: #a6b1c5;
     }
-    a { color:#7fb4ff; word-break: break-all; }
-    .tag { background:#1f2937; padding:4px 8px; border-radius:10px; font-size:12px; }
-    footer { text-align:center; padding:30px 0; color:#a9b1c6; font-size:13px; }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Arial;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    header {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 32px 18px 18px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 140px;
+      height: auto;
+      margin-bottom: 14px;
+      border-radius: 18px;
+    }
+
+    h1 {
+      margin: 6px 0 10px;
+      font-size: 32px;
+      letter-spacing: 0.5px;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 26px;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 8px;
+      background: var(--accent);
+      color: #001733;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 22px auto 60px;
+      padding: 0 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #1f2b44;
+      padding: 18px 18px 14px;
+      border-radius: 14px;
+      margin: 14px 0;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    a { color: var(--accent); }
+
+    footer {
+      text-align: center;
+      padding: 24px 0 30px;
+      color: var(--muted);
+      font-size: 13px;
+    }
   </style>
 </head>
 
 <body>
+
 <header>
-  <h1>Apex TV — Apps & Downloads</h1>
-  <p>Your one-stop place for setup links and tools.</p>
+  <!-- Put the logo file at /logo.png in the repo -->
+  <img src="/logo.png" class="logo" alt="Apex TV logo" />
+
+  <h1>Apex&nbsp;TV</h1>
+  <div class="tagline">
+    Streamlined access to everything you need — apps, tools and guides in one place.
+  </div>
+
+  <a class="cta" href="/apps">Browse Apps & Downloads</a>
 </header>
 
-<div class="container">
+<main>
 
-  <div class="section">
-    <h2>Before you start</h2>
-    <div class="card">
-      <p>You will need the <strong>Downloader app</strong> prior to using any links on a Firestick/Chromecast.</p>
-      <p>Setup guide: <a href="https://youtu.be/MCy4vFD_FQk">https://youtu.be/MCy4vFD_FQk</a></p>
-      <p><em>All apps show the same content — choose whichever you prefer.</em></p>
-    </div>
+  <div class="card">
+    <h2>What is this page?</h2>
+    <p>
+      This hub keeps all Apex TV setup links together so you don’t have to search
+      through channels or messages. If anything changes, this page will always have
+      the most up-to-date version.
+    </p>
   </div>
 
-  <div class="section">
-    <h2>Android TV & Firestick</h2>
-    <div class="card">
-      <strong>Apex TV (XC)</strong><br>
-      <a href="https://apex-tv.xyz/xc">https://apex-tv.xyz/xc</a><br>
-      <span class="tag">Downloader: 1134921</span>
-    </div>
-
-    <div class="card">
-      <strong>TiviMate Premium</strong><br>
-      <a href="https://apex-tv.xyz/tivi">https://apex-tv.xyz/tivi</a><br>
-      <span class="tag">Downloader: 8175140</span>
-    </div>
+  <div class="card">
+    <h2>Quick notes</h2>
+    <ul>
+      <li>You only need to install one app — they all show the same content.</li>
+      <li>Firestick/Chromecast users should install <strong>Downloader</strong> first.</li>
+      <li>If you get stuck, open a support ticket in Discord.</li>
+    </ul>
   </div>
 
-  <div class="section">
-    <h2>Android Mobile</h2>
-    <div class="card">
-      Apex Mobile: <a href="https://apex-tv.xyz/mobile">https://apex-tv.xyz/mobile</a><br>
-      Backup: <a href="https://apex-tv.xyz/mobilebackup">https://apex-tv.xyz/mobilebackup</a>
-    </div>
+  <div class="card">
+    <h2>Helpful links</h2>
+    <p>
+      ▶ Setup video: <a href="https://youtu.be/MCy4vFD_FQk">Installing Downloader</a><br>
+      💬 Discord invite: <a href="/join">Join the server</a>
+    </p>
   </div>
 
-  <div class="section">
-    <h2>iOS</h2>
-    <div class="card">
-      <a href="https://apex-tv.xyz/iOS">https://apex-tv.xyz/iOS</a><br>
-      <span class="tag">Playlist host URL: 5555122</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Windows</h2>
-    <div class="card">
-      <a href="https://apex-tv.xyz/windows">https://apex-tv.xyz/windows</a><br>
-      <small>Server URL can be provided in the support channel.</small>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Web Player</h2>
-    <div class="card">
-      Details can be provided in the support channel.
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Ping Test (only if requested)</h2>
-    <div class="card">
-      <a href="https://apex-tv.xyz/ping">https://apex-tv.xyz/ping</a><br>
-      <span class="tag">Downloader: 6837828</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Apex Vault 🔒</h2>
-    <div class="card">
-      <p><em>Enhanced addon VOD service — Android/Firestick only.</em></p>
-      <p>Download: <a href="https://apex-tv.xyz/vault">https://apex-tv.xyz/vault</a><br>
-      Downloader: 1250834</p>
-      <p>Use your normal Apex login credentials.</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>VPN (Optional)</h2>
-    <div class="card">
-      <p>Not required for Apex TV (encryption is server-side).  
-      If troubleshooting live TV, disable the VPN.</p>
-
-      <p>Download: <a href="https://apex-tv.xyz/vpn">https://apex-tv.xyz/vpn</a><br>
-      Downloader: 3995390</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Support</h2>
-    <div class="card">
-      If you need account details or help, please open a ticket in the support channel.
-    </div>
-  </div>
-
-</div>
+</main>
 
 <footer>
-  Last updated: <span id="updated"></span>
+  Apex TV • Last updated <span id="updated"></span>
 </footer>
 
 <script>
