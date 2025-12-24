@@ -34,7 +34,6 @@ header img{
 h1{ font-size:42px; margin:10px 0; }
 p.subtitle{ color:#aab8d8; }
 
-/* header buttons line */
 .actions{
   margin-top:10px;
   display:flex;
@@ -49,25 +48,43 @@ p.subtitle{ color:#aab8d8; }
   padding:10px 22px;
   border-radius:10px;
   display:inline-flex;
-  gap:8px;
   align-items:center;
   border:none;
   cursor:pointer;
   font-size:15px;
+  text-decoration:none;
 }
-.status{
-  background:#0d5a2b;
-}
+.status{ background:#0d5a2b; }
 
-/* IP badge — always its OWN LINE */
+/* IP badge */
 .badge{
   background:#0a1d38;
   padding:12px;
   border-radius:12px;
   margin:16px auto 5px;
-  display:block;          /* forces new line */
-  max-width:220px;
+  display:block;
+  max-width:260px;
   text-align:center;
+}
+
+/* inline copy rows */
+.inline-copy{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.copy{
+  background:#0d203e;
+  color:#a8c5ff;
+  border:none;
+  border-radius:8px;
+  padding:5px 10px;
+  cursor:pointer;
+}
+.copy.copied{
+  background:#1c7c10;
+  color:white;
 }
 
 nav{ margin-top:10px; text-align:center; }
@@ -82,9 +99,7 @@ nav button{
 }
 nav button:hover{ background:#123a73; }
 
-.section{
-  margin-top:25px;
-}
+.section{ margin-top:25px; }
 
 .box{
   background:#0a1e3a;
@@ -111,19 +126,15 @@ nav button:hover{ background:#123a73; }
 .card h3{ margin:6px 0 4px; }
 .card p{ margin:6px 0; }
 
-.card button{
+.card a{
   margin-top:8px;
   padding:9px 18px;
   border-radius:9px;
-  border:none;
-  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
 }
 
 .blue{ background:#375dff; color:white; }
-
-.copy{ margin-top:6px; background:#0d203e; color:#a8c5ff; }
-.copy.small{ padding:6px 10px; font-size:13px; border-radius:7px; }
-.copy.copied{ background:#1c7c10; color:white; }
 
 .faq-item{ margin:10px 0; }
 .faq-item summary{
@@ -170,14 +181,17 @@ window.onload=()=>{
   <p class="subtitle">Everything you need — apps, tools and setup links — in one place.</p>
 
   <div class="actions">
-    <button class="button">Join Discord</button>
-    <button class="button status">Service Status: Online</button>
+    <a class="button" href="#" target="_blank">Join Discord</a>
+    <a class="button status" href="#" target="_blank">Service Status: Online</a>
   </div>
 
   <div class="badge">
     <div style="font-size:14px; opacity:.9;">Your IP</div>
-    <div id="iptext" style="font-size:18px; font-weight:600;">…</div>
-    <button class="copy small" onclick="copyIP(this)">Copy</button>
+
+    <div class="inline-copy">
+      <span id="iptext">…</span>
+      <button class="copy" onclick="copyIP(this)">Copy</button>
+    </div>
   </div>
 </header>
 
@@ -210,16 +224,22 @@ window.onload=()=>{
 <div class="grid">
   <div class="card">
     <h3>Apex TV</h3>
-    <button class="blue">Download</button>
-    <p>Downloader code: 1134921</p>
-    <button class="copy" onclick="copyText('1134921',this)">Copy</button>
+    <a class="blue" href="#" target="_blank">Download</a>
+
+    <p class="inline-copy">
+      <span>Downloader code: 1134921</span>
+      <button class="copy" onclick="copyText('1134921',this)">Copy</button>
+    </p>
   </div>
 
   <div class="card">
     <h3>TiviMate</h3>
-    <button class="blue">Download</button>
-    <p>Downloader code: 8175140</p>
-    <button class="copy" onclick="copyText('8175140',this)">Copy</button>
+    <a class="blue" href="#" target="_blank">Download</a>
+
+    <p class="inline-copy">
+      <span>Downloader code: 8175140</span>
+      <button class="copy" onclick="copyText('8175140',this)">Copy</button>
+    </p>
   </div>
 </div>
 </section>
@@ -229,11 +249,12 @@ window.onload=()=>{
 <div class="grid">
 <div class="card">
   <h3>Apex Mobile</h3>
-  <button class="blue">Download</button>
+  <a class="blue" href="#" target="_blank">Download</a>
 </div>
+
 <div class="card">
   <h3>Backup App</h3>
-  <button class="blue">Download</button>
+  <a class="blue" href="#" target="_blank">Download</a>
 </div>
 </div>
 </section>
@@ -242,9 +263,12 @@ window.onload=()=>{
 <h2>🍎 iOS</h2>
 <div class="card">
   <h3>iOS Player</h3>
-  <button class="blue">Download</button>
-  <p>Playlist host: 5555122</p>
-  <button class="copy" onclick="copyText('5555122',this)">Copy</button>
+  <a class="blue" href="#" target="_blank">Download</a>
+
+  <p class="inline-copy">
+    <span>Playlist host: 5555122</span>
+    <button class="copy" onclick="copyText('5555122',this)">Copy</button>
+  </p>
 </div>
 </section>
 
@@ -252,7 +276,7 @@ window.onload=()=>{
 <h2>💻 Windows</h2>
 <div class="card">
   <h3>Windows App</h3>
-  <button class="blue">Download</button>
+  <a class="blue" href="#" target="_blank">Download</a>
 </div>
 </section>
 
@@ -260,7 +284,7 @@ window.onload=()=>{
 <h2>🛡 VPN</h2>
 <div class="card">
   <h3>Recommended VPN</h3>
-  <button class="blue">Download</button>
+  <a class="blue" href="#" target="_blank">Download</a>
 </div>
 </section>
 
