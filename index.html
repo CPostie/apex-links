@@ -23,7 +23,6 @@ header img{ width:130px; margin-bottom:15px; }
 h1{ font-size:42px; margin:10px 0; }
 p.subtitle{ color:#aab8d8; }
 
-/* header buttons row */
 .actions{
   margin-top:10px;
   display:flex;
@@ -53,14 +52,8 @@ p.subtitle{ color:#aab8d8; }
   border-radius:12px;
   margin:16px auto 5px;
   display:block;
-  max-width:260px;
+  max-width:300px;
   text-align:center;
-}
-
-.inline-copy{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
 }
 
 .copy{
@@ -171,11 +164,11 @@ window.onload=()=>{
     <a class="button status" href="#" target="_blank">Service Status: Online</a>
   </div>
 
+  <!-- IP on ONE LINE -->
   <div class="badge">
-    <div style="font-size:14px; opacity:.9;">Your IP</div>
-
     <div style="display:flex; justify-content:center; align-items:center; gap:8px;">
-      <span id="iptext" style="font-size:18px; font-weight:600;">…</span>
+      <span>Your IP:</span>
+      <span id="iptext" style="font-weight:600;">…</span>
       <button class="copy" onclick="copyIP(this)">Copy</button>
     </div>
   </div>
@@ -214,7 +207,7 @@ window.onload=()=>{
     <a class="blue" href="#" target="_blank">Download</a>
 
     <p>
-      <span>Downloader code: 1134921</span>
+      Downloader code: <b>1134921</b>
       <button class="copy" onclick="copyText('1134921',this)">Copy</button>
     </p>
   </div>
@@ -225,7 +218,7 @@ window.onload=()=>{
     <a class="blue" href="#" target="_blank">Download</a>
 
     <p>
-      <span>Downloader code: 8175140</span>
+      Downloader code: <b>8175140</b>
       <button class="copy" onclick="copyText('8175140',this)">Copy</button>
     </p>
   </div>
@@ -255,7 +248,7 @@ window.onload=()=>{
   <a class="blue" href="#" target="_blank">Download</a>
 
   <p>
-    <span>Playlist host: 5555122</span>
+    Playlist host: <b>5555122</b>
     <button class="copy" onclick="copyText('5555122',this)">Copy</button>
   </p>
 </div>
