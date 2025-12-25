@@ -99,6 +99,13 @@ nav button:hover{ background:#123a73; }
   border-radius:16px;
   padding:10px;
   text-align:center;
+  transition:0.15s;
+}
+
+/* ✔ NEW — hover feedback */
+.card:hover{
+  border-color:#2c6bff;
+  transform:translateY(-2px);
 }
 
 .card h3{ margin:6px 0 4px; }
@@ -261,17 +268,17 @@ window.onload=()=>{
 <h2>🛡 Addons</h2>
 
 <div class="grid">
-  
+
   <div class="card">
     <h3>Apex Vault</h3>
     <a class="blue" href="https://github.com/CPostie/ApexTV/raw/main/ApexVault.apk" target="_blank">Download</a>
-    <p>Enhanced Addon VOD Service - use normal Apex login details</p>
+    <p>Enhanced Addon VOD Service — use normal Apex login details</p>
   </div>
 
   <div class="card">
     <h3>Apex VPN</h3>
     <a class="blue" href="https://vp1.uk/GGMJU" target="_blank">Download</a>
-    <p>Optional VPN - APK installation for TV & mobile. Useful normal Apex login details</p>
+    <p>Optional VPN — APK installation for TV & mobile. Use normal Apex login details</p>
   </div>
 
 </div>
